@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,6 +30,29 @@ public class menuAeroclub extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addMemberjDialog = new javax.swing.JDialog();
+        addMemberHeadjPanel = new javax.swing.JPanel();
+        addMemberTitlejLabel = new javax.swing.JLabel();
+        addMemberSeparatorjPanel = new javax.swing.JPanel();
+        addMemberMainjPanel = new javax.swing.JPanel();
+        addMemberjButton = new javax.swing.JButton();
+        addMember_loginjLabel = new javax.swing.JLabel();
+        addMember_num_membrejTextField = new javax.swing.JTextField();
+        addMember_passwordjLabel = new javax.swing.JLabel();
+        addMember_num_membrejLabel = new javax.swing.JLabel();
+        addMember_loginjTextField = new javax.swing.JTextField();
+        addMember_passwordjPasswordField = new javax.swing.JPasswordField();
+        showMemberjDialog = new javax.swing.JDialog();
+        showMemberHeadjPanel = new javax.swing.JPanel();
+        showMemberTitlejLabel = new javax.swing.JLabel();
+        showMemberSeparatorjPanel = new javax.swing.JPanel();
+        showMemberMainjPanel = new javax.swing.JPanel();
+        showMember_num_membrejLabel = new javax.swing.JLabel();
+        showMember_loginjLabel = new javax.swing.JLabel();
+        showMember_passwordjLabel = new javax.swing.JLabel();
+        showMember_num_membreDatajLabel = new javax.swing.JLabel();
+        showMember_loginDatajLabel2 = new javax.swing.JLabel();
+        showMember_passwordDatajLabel1 = new javax.swing.JLabel();
         headjPanel = new javax.swing.JPanel();
         titlejLabel = new javax.swing.JLabel();
         backToMenujButton = new javax.swing.JButton();
@@ -45,11 +69,130 @@ public class menuAeroclub extends javax.swing.JFrame {
         getMembresjButton = new javax.swing.JButton();
         membresjPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        addMemberjButton = new javax.swing.JButton();
-        deleteMember = new javax.swing.JButton();
+        openshowMemberjButton = new javax.swing.JButton();
+        openAddMemberjButton = new javax.swing.JButton();
+        openDeleteMember = new javax.swing.JButton();
         membresjScrollPane = new javax.swing.JScrollPane();
         membresjTable = new javax.swing.JTable();
+
+        addMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addMemberjDialog.setAlwaysOnTop(true);
+        addMemberjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        addMemberjDialog.setIconImage(null);
+        addMemberjDialog.setLocationByPlatform(true);
+        addMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
+        addMemberjDialog.setPreferredSize(new java.awt.Dimension(400, 600));
+        addMemberjDialog.setResizable(false);
+        addMemberjDialog.setSize(new java.awt.Dimension(400, 600));
+        addMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        addMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addMemberTitlejLabel.setText("Ajout d'un membre");
+        addMemberHeadjPanel.add(addMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        addMemberjDialog.getContentPane().add(addMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        addMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        addMemberjDialog.getContentPane().add(addMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        addMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMemberjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMemberjButton.setText("Ajouter");
+        addMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMemberjButtonActionPerformed(evt);
+            }
+        });
+        addMemberMainjPanel.add(addMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 100, 30));
+
+        addMember_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMember_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMember_loginjLabel.setText("login");
+        addMemberMainjPanel.add(addMember_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
+
+        addMember_num_membrejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMemberMainjPanel.add(addMember_num_membrejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 20));
+
+        addMember_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMember_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMember_passwordjLabel.setText("password");
+        addMemberMainjPanel.add(addMember_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 20));
+
+        addMember_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMember_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMember_num_membrejLabel.setText("num_membre");
+        addMemberMainjPanel.add(addMember_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+
+        addMember_loginjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMemberMainjPanel.add(addMember_loginjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 200, 20));
+
+        addMember_passwordjPasswordField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMemberMainjPanel.add(addMember_passwordjPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 20));
+
+        addMemberjDialog.getContentPane().add(addMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+
+        addMemberjDialog.setLocationRelativeTo(null);
+
+        showMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        showMemberjDialog.setAlwaysOnTop(true);
+        showMemberjDialog.setLocationByPlatform(true);
+        showMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
+        showMemberjDialog.setPreferredSize(new java.awt.Dimension(400, 600));
+        showMemberjDialog.setResizable(false);
+        showMemberjDialog.setSize(new java.awt.Dimension(400, 600));
+        showMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        showMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showMemberTitlejLabel.setText("Ajout d'un membre");
+        showMemberHeadjPanel.add(showMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        showMemberjDialog.getContentPane().add(showMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        showMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        showMemberjDialog.getContentPane().add(showMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        showMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showMember_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMember_num_membrejLabel.setText("num_membre :");
+        showMember_num_membrejLabel.setToolTipText("");
+        showMemberMainjPanel.add(showMember_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+
+        showMember_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMember_loginjLabel.setText("login :");
+        showMember_loginjLabel.setToolTipText("");
+        showMemberMainjPanel.add(showMember_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
+
+        showMember_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMember_passwordjLabel.setText("password :");
+        showMember_passwordjLabel.setToolTipText("");
+        showMemberMainjPanel.add(showMember_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 20));
+
+        showMember_num_membreDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_num_membreDatajLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showMemberMainjPanel.add(showMember_num_membreDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 20));
+
+        showMember_loginDatajLabel2.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_loginDatajLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showMemberMainjPanel.add(showMember_loginDatajLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 200, 20));
+
+        showMember_passwordDatajLabel1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        showMember_passwordDatajLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showMemberMainjPanel.add(showMember_passwordDatajLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 20));
+
+        showMemberjDialog.getContentPane().add(showMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+
+        addMemberjDialog.setLocationRelativeTo(null);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aeroclub - Menu");
@@ -125,34 +268,39 @@ public class menuAeroclub extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Modifier");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         membresjPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton10.setText("Afficher");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        openshowMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openshowMemberjButton.setText("Afficher");
+        openshowMemberjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                openshowMemberjButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+        membresjPanel.add(openshowMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
 
-        addMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        addMemberjButton.setText("Ajouter");
-        addMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        openAddMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddMemberjButton.setText("Ajouter");
+        openAddMemberjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addMemberjButtonActionPerformed(evt);
+                openAddMemberjButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(addMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+        membresjPanel.add(openAddMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
 
-        deleteMember.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deleteMember.setText("Supprimer");
-        deleteMember.addActionListener(new java.awt.event.ActionListener() {
+        openDeleteMember.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteMember.setText("Supprimer");
+        openDeleteMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteMemberActionPerformed(evt);
+                openDeleteMemberActionPerformed(evt);
             }
         });
-        membresjPanel.add(deleteMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+        membresjPanel.add(openDeleteMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
 
         membresjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         membresjTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -163,14 +311,23 @@ public class menuAeroclub extends javax.swing.JFrame {
                 "num_membre", "login", "password"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        membresjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        membresjTable.getTableHeader().setReorderingAllowed(false);
         membresjScrollPane.setViewportView(membresjTable);
         if (membresjTable.getColumnModel().getColumnCount() > 0) {
             membresjTable.getColumnModel().getColumn(0).setResizable(false);
@@ -178,10 +335,10 @@ public class menuAeroclub extends javax.swing.JFrame {
             membresjTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        membresjPanel.add(membresjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1440, 650));
+        membresjPanel.add(membresjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1410, 630));
 
         mainjLayeredPane.add(membresjPanel);
-        membresjPanel.setBounds(0, 0, 1440, 700);
+        membresjPanel.setBounds(0, 0, 1420, 680);
 
         getContentPane().add(mainjLayeredPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1440, 700));
         switchPanels(menujPanel);
@@ -194,22 +351,31 @@ public class menuAeroclub extends javax.swing.JFrame {
         switchPanels(menujPanel);
     }//GEN-LAST:event_backToMenujButtonActionPerformed
 
-    private void addMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberjButtonActionPerformed
-        new addMemberModal().setVisible(true);
-    }//GEN-LAST:event_addMemberjButtonActionPerformed
+    private void openAddMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddMemberjButtonActionPerformed
+        addMemberjDialog.setVisible(true);
+    }//GEN-LAST:event_openAddMemberjButtonActionPerformed
 
     private void getMembresjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getMembresjButtonActionPerformed
         switchPanels(membresjPanel);
         getMembersTable();
     }//GEN-LAST:event_getMembresjButtonActionPerformed
 
-    private void deleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMemberActionPerformed
+    private void openDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteMemberActionPerformed
         deleteMember();
-    }//GEN-LAST:event_deleteMemberActionPerformed
+    }//GEN-LAST:event_openDeleteMemberActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void openshowMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openshowMemberjButtonActionPerformed
         getMember();
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_openshowMemberjButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void addMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberjButtonActionPerformed
+        addMember(addMember_num_membrejTextField.getText(), addMember_loginjTextField.getText(), addMember_passwordjPasswordField.getText());
+        this.dispose();
+    }//GEN-LAST:event_addMemberjButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,7 +440,7 @@ public class menuAeroclub extends javax.swing.JFrame {
             dataMember member = new dataMember();
             member.getMember(num_membre);
 
-            new showMemberModal(member.num_membre).setVisible(true);
+            showMemberjDialog.setVisible(true);
         
         }
         
@@ -312,7 +478,7 @@ public class menuAeroclub extends javax.swing.JFrame {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM membres ASC;");
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM membres ORDER BY num_membre ASC;");
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()) {
@@ -339,13 +505,22 @@ public class menuAeroclub extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel addMemberHeadjPanel;
+    private javax.swing.JPanel addMemberMainjPanel;
+    private javax.swing.JPanel addMemberSeparatorjPanel;
+    private javax.swing.JLabel addMemberTitlejLabel;
+    private javax.swing.JLabel addMember_loginjLabel;
+    private javax.swing.JTextField addMember_loginjTextField;
+    private javax.swing.JLabel addMember_num_membrejLabel;
+    private javax.swing.JTextField addMember_num_membrejTextField;
+    private javax.swing.JLabel addMember_passwordjLabel;
+    private javax.swing.JPasswordField addMember_passwordjPasswordField;
     private javax.swing.JButton addMemberjButton;
+    private javax.swing.JDialog addMemberjDialog;
     private javax.swing.JButton backToMenujButton;
-    private javax.swing.JButton deleteMember;
     private javax.swing.JButton getMembresjButton;
     private javax.swing.JPanel headjPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -358,7 +533,21 @@ public class menuAeroclub extends javax.swing.JFrame {
     private javax.swing.JScrollPane membresjScrollPane;
     private javax.swing.JTable membresjTable;
     private javax.swing.JPanel menujPanel;
+    private javax.swing.JButton openAddMemberjButton;
+    private javax.swing.JButton openDeleteMember;
+    private javax.swing.JButton openshowMemberjButton;
     private javax.swing.JPanel separatorjPanel;
+    private javax.swing.JPanel showMemberHeadjPanel;
+    private javax.swing.JPanel showMemberMainjPanel;
+    private javax.swing.JPanel showMemberSeparatorjPanel;
+    private javax.swing.JLabel showMemberTitlejLabel;
+    private javax.swing.JLabel showMember_loginDatajLabel2;
+    private javax.swing.JLabel showMember_loginjLabel;
+    private javax.swing.JLabel showMember_num_membreDatajLabel;
+    private javax.swing.JLabel showMember_num_membrejLabel;
+    private javax.swing.JLabel showMember_passwordDatajLabel1;
+    private javax.swing.JLabel showMember_passwordjLabel;
+    private javax.swing.JDialog showMemberjDialog;
     private javax.swing.JLabel titlejLabel;
     // End of variables declaration//GEN-END:variables
 }
