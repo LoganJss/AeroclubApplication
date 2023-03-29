@@ -1,13 +1,10 @@
 package Aeroclub.app;
 
+import Aeroclub.app.data.database;
 import org.mindrot.jbcrypt.BCrypt;
 import java.awt.event.KeyEvent;
 import java.sql.*;
 
-/**
- *
- * @author logan.josse
- */
 public class authentification extends javax.swing.JFrame {
 
     /**
