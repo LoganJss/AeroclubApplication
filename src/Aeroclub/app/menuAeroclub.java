@@ -1,13 +1,13 @@
 package Aeroclub.app;
 
 import Aeroclub.app.data.database;
-import Aeroclub.app.data.dataMember;
+import Aeroclub.app.data.Membre;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 public class menuAeroclub extends javax.swing.JFrame {
 
@@ -27,48 +27,222 @@ public class menuAeroclub extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addMemberjDialog = new javax.swing.JDialog();
-        addMemberHeadjPanel = new javax.swing.JPanel();
-        addMemberTitlejLabel = new javax.swing.JLabel();
-        addMemberSeparatorjPanel = new javax.swing.JPanel();
-        addMemberMainjPanel = new javax.swing.JPanel();
-        addMemberjButton = new javax.swing.JButton();
-        addMember_loginjLabel = new javax.swing.JLabel();
-        addMember_num_membrejTextField = new javax.swing.JTextField();
-        addMember_passwordjLabel = new javax.swing.JLabel();
-        addMember_num_membrejLabel = new javax.swing.JLabel();
-        addMember_loginjTextField = new javax.swing.JTextField();
-        addMember_passwordjPasswordField = new javax.swing.JPasswordField();
-        showMemberjDialog = new javax.swing.JDialog();
-        showMemberHeadjPanel = new javax.swing.JPanel();
-        showMemberTitlejLabel = new javax.swing.JLabel();
-        showMemberSeparatorjPanel = new javax.swing.JPanel();
-        showMemberMainjPanel = new javax.swing.JPanel();
-        showMember_num_membrejLabel = new javax.swing.JLabel();
-        showMember_loginjLabel = new javax.swing.JLabel();
-        showMember_passwordjLabel = new javax.swing.JLabel();
-        showMember_num_membreDatajLabel = new javax.swing.JLabel();
-        showMember_loginDatajLabel = new javax.swing.JLabel();
-        showMember_passwordDatajLabel = new javax.swing.JLabel();
-        modifyMemberjDialog = new javax.swing.JDialog();
-        modifyMemberHeadjPanel = new javax.swing.JPanel();
-        modifyMemberTitlejLabel = new javax.swing.JLabel();
-        modifyMemberSeparatorjPanel = new javax.swing.JPanel();
-        modifyMemberMainjPanel = new javax.swing.JPanel();
-        modifyMemberjButton = new javax.swing.JButton();
-        modifyMember_loginjLabel = new javax.swing.JLabel();
-        modifyMember_num_membrejTextField = new javax.swing.JTextField();
-        modifyMember_passwordjLabel = new javax.swing.JLabel();
-        modifyMember_num_membrejLabel = new javax.swing.JLabel();
-        modifyMember_loginjTextField = new javax.swing.JTextField();
-        modifyMember_passwordjPasswordField = new javax.swing.JPasswordField();
-        deleteMemberjDialog = new javax.swing.JDialog();
-        deleteMemberHeadjPanel = new javax.swing.JPanel();
-        deleteMemberTitlejLabel = new javax.swing.JLabel();
-        deleteMemberSeparatorjPanel = new javax.swing.JPanel();
-        deleteMemberMainjPanel = new javax.swing.JPanel();
-        deleteMember_canceljButton = new javax.swing.JButton();
-        deleteMember_submitjButton = new javax.swing.JButton();
+        showMembrejDialog = new javax.swing.JDialog();
+        showMembreHeadjPanel = new javax.swing.JPanel();
+        showMembreTitlejLabel = new javax.swing.JLabel();
+        showMembreSeparatorjPanel = new javax.swing.JPanel();
+        showMembreMainjPanel = new javax.swing.JPanel();
+        showMembre_num_membrejLabel = new javax.swing.JLabel();
+        showMembre_nomjLabel = new javax.swing.JLabel();
+        showMembre_prenomjLabel = new javax.swing.JLabel();
+        showMembre_num_membreDatajLabel = new javax.swing.JLabel();
+        showMembre_nomDatajLabel = new javax.swing.JLabel();
+        showMembre_prenomDatajLabel = new javax.swing.JLabel();
+        showMembre_adressejLabel = new javax.swing.JLabel();
+        showMembre_adresseDatajLabel = new javax.swing.JLabel();
+        showMembre_code_postaljLabel = new javax.swing.JLabel();
+        showMembre_code_postalDatajLabel = new javax.swing.JLabel();
+        showMembre_villejLabel = new javax.swing.JLabel();
+        showMembre_villeDatajLabel = new javax.swing.JLabel();
+        showMembre_num_civiljLabel = new javax.swing.JLabel();
+        showMembre_num_civilDatajLabel = new javax.swing.JLabel();
+        showMembre_teljLabel = new javax.swing.JLabel();
+        showMembre_telDatajLabel = new javax.swing.JLabel();
+        showMembre_portablejLabel = new javax.swing.JLabel();
+        showMembre_portableDatajLabel = new javax.swing.JLabel();
+        showMembre_emailjLabel = new javax.swing.JLabel();
+        showMembre_emailDatajLabel = new javax.swing.JLabel();
+        showMembre_commentairejLabel = new javax.swing.JLabel();
+        showMembre_commentaireDatajLabel = new javax.swing.JLabel();
+        showMembre_date_vmjLabel = new javax.swing.JLabel();
+        showMembre_date_vmDatajLabel = new javax.swing.JLabel();
+        showMembre_validite_vmjLabel = new javax.swing.JLabel();
+        showMembre_validite_vmDatajLabel = new javax.swing.JLabel();
+        showMembre_date_seqjLabel = new javax.swing.JLabel();
+        showMembre_date_seqDatajLabel = new javax.swing.JLabel();
+        showMembre_validite_seqjLabel = new javax.swing.JLabel();
+        showMembre_validite_seqDatajLabel = new javax.swing.JLabel();
+        showMembre_num_badgejLabel = new javax.swing.JLabel();
+        showMembre_num_badgeDatajLabel = new javax.swing.JLabel();
+        showMembre_num_qualifjLabel = new javax.swing.JLabel();
+        showMembre_num_qualifDatajLabel = new javax.swing.JLabel();
+        showMembre_professionjLabel = new javax.swing.JLabel();
+        showMembre_professionDatajLabel = new javax.swing.JLabel();
+        showMembre_date_naissancejLabel = new javax.swing.JLabel();
+        showMembre_date_naissanceDatajLabel = new javax.swing.JLabel();
+        showMembre_lieu_naissancejLabel = new javax.swing.JLabel();
+        showMembre_lieu_naissanceDatajLabel = new javax.swing.JLabel();
+        showMembre_carte_federalejLabel = new javax.swing.JLabel();
+        showMembre_carte_federaleDatajLabel = new javax.swing.JLabel();
+        showMembre_date_attestationjLabel = new javax.swing.JLabel();
+        showMembre_date_attestationDatajLabel = new javax.swing.JLabel();
+        showMembre_date_theorique_bbjLabel = new javax.swing.JLabel();
+        showMembre_date_theorique_bbDatajLabel = new javax.swing.JLabel();
+        showMembre_date_theorique_pplajLabel = new javax.swing.JLabel();
+        showMembre_date_theorique_pplaDatajLabel = new javax.swing.JLabel();
+        showMembre_date_bbjLabel = new javax.swing.JLabel();
+        showMembre_date_bbDatajLabel = new javax.swing.JLabel();
+        showMembre_date_pplajLabel = new javax.swing.JLabel();
+        showMembre_date_pplaDatajLabel = new javax.swing.JLabel();
+        showMembre_numero_bbjLabel = new javax.swing.JLabel();
+        showMembre_numero_bbDatajLabel = new javax.swing.JLabel();
+        showMembre_numera_pplajLabel = new javax.swing.JLabel();
+        showMembre_numera_pplaDatajLabel = new javax.swing.JLabel();
+        showMembre_date_entreejLabel = new javax.swing.JLabel();
+        showMembre_date_entreeDatajLabel = new javax.swing.JLabel();
+        showMembre_membre_actifjLabel = new javax.swing.JLabel();
+        showMembre_membre_actifDatajLabel = new javax.swing.JLabel();
+        showMembre_membre_inscritjLabel = new javax.swing.JLabel();
+        showMembre_membre_inscritDatajLabel = new javax.swing.JLabel();
+        showMembre_loginjLabel = new javax.swing.JLabel();
+        showMembre_loginDatajLabel = new javax.swing.JLabel();
+        addMembrejDialog = new javax.swing.JDialog();
+        addMembreHeadjPanel = new javax.swing.JPanel();
+        addMembreTitlejLabel = new javax.swing.JLabel();
+        addMembreSeparatorjPanel = new javax.swing.JPanel();
+        addMembreMainjPanel = new javax.swing.JPanel();
+        addMembrejButton = new javax.swing.JButton();
+        addMembre_loginjLabel = new javax.swing.JLabel();
+        addMembre_loginjTextField = new javax.swing.JTextField();
+        addMembre_passwordjLabel = new javax.swing.JLabel();
+        addMembre_passwordjPasswordField = new javax.swing.JPasswordField();
+        addMembre_nomjLabel1 = new javax.swing.JLabel();
+        addMembre_nomjTextField = new javax.swing.JTextField();
+        addMembre_prenomjLabel = new javax.swing.JLabel();
+        addMembre_prenomjTextField = new javax.swing.JTextField();
+        addMembre_adressejLabel = new javax.swing.JLabel();
+        addMembre_adressejTextField = new javax.swing.JTextField();
+        addMembre_code_postaljLabel = new javax.swing.JLabel();
+        addMembre_code_postaljTextField = new javax.swing.JTextField();
+        addMembre_villejLabel = new javax.swing.JLabel();
+        addMembre_villejTextField = new javax.swing.JTextField();
+        addMembre_num_civiljLabel = new javax.swing.JLabel();
+        addMembre_num_civiljTextField = new javax.swing.JTextField();
+        addMembre_teljLabel = new javax.swing.JLabel();
+        addMembre_teljTextField = new javax.swing.JTextField();
+        addMembre_portablejLabel = new javax.swing.JLabel();
+        addMembre_portablejTextField = new javax.swing.JTextField();
+        addMembre_emailjLabel = new javax.swing.JLabel();
+        addMembre_emailjTextField = new javax.swing.JTextField();
+        addMembre_commentairejLabel = new javax.swing.JLabel();
+        addMembre_commentairejTextField = new javax.swing.JTextField();
+        addMembre_date_vmjLabel = new javax.swing.JLabel();
+        addMembre_date_vmjTextField = new javax.swing.JTextField();
+        addMembre_validite_vmjLabel = new javax.swing.JLabel();
+        addMembre_validite_vmjTextField = new javax.swing.JTextField();
+        addMembre_date_seqjLabel = new javax.swing.JLabel();
+        addMembre_date_seqjTextField = new javax.swing.JTextField();
+        addMembre_validite_seqjLabel = new javax.swing.JLabel();
+        addMembre_validite_seqjTextField = new javax.swing.JTextField();
+        addMembre_num_badgejLabel = new javax.swing.JLabel();
+        addMembre_num_badgejTextField = new javax.swing.JTextField();
+        addMembre_num_qualifjLabel = new javax.swing.JLabel();
+        addMembre_num_qualifjTextField = new javax.swing.JTextField();
+        addMembre_professionjLabel = new javax.swing.JLabel();
+        addMembre_professionjTextField = new javax.swing.JTextField();
+        addMembre_date_naissancejLabel = new javax.swing.JLabel();
+        addMembre_date_naissancejTextField = new javax.swing.JTextField();
+        addMembre_lieu_naissancejLabel = new javax.swing.JLabel();
+        addMembre_lieu_naissancejTextField = new javax.swing.JTextField();
+        addMembre_carte_federalejLabel = new javax.swing.JLabel();
+        addMembre_carte_federalejTextField = new javax.swing.JTextField();
+        addMembre_date_attestationjLabel = new javax.swing.JLabel();
+        addMembre_date_attestationjTextField = new javax.swing.JTextField();
+        addMembre_date_theorique_bbjLabel = new javax.swing.JLabel();
+        addMembre_date_theorique_bbjTextField = new javax.swing.JTextField();
+        addMembre_date_theorique_pplajLabel = new javax.swing.JLabel();
+        addMembre_date_theorique_pplajTextField = new javax.swing.JTextField();
+        addMembre_date_bbjLabel = new javax.swing.JLabel();
+        addMembre_date_bbjTextField = new javax.swing.JTextField();
+        addMembre_date_pplajLabel = new javax.swing.JLabel();
+        addMembre_date_pplajTextField = new javax.swing.JTextField();
+        addMembre_numero_bbjLabel = new javax.swing.JLabel();
+        addMembre_numero_bbjTextField = new javax.swing.JTextField();
+        addMembre_numera_pplajLabel = new javax.swing.JLabel();
+        addMembre_numera_pplajTextField = new javax.swing.JTextField();
+        addMembre_date_entreejLabel = new javax.swing.JLabel();
+        addMembre_date_entreejTextField = new javax.swing.JTextField();
+        addMembre_membre_actifjLabel = new javax.swing.JLabel();
+        addMembre_membre_actifjCheckBox = new javax.swing.JCheckBox();
+        addMembre_membre_inscritjLabel = new javax.swing.JLabel();
+        addMembre_membre_inscritjCheckBox = new javax.swing.JCheckBox();
+        modifyMembrejDialog = new javax.swing.JDialog();
+        modifyMembreHeadjPanel = new javax.swing.JPanel();
+        modifyMembreTitlejLabel = new javax.swing.JLabel();
+        modifyMembreSeparatorjPanel = new javax.swing.JPanel();
+        modifyMembreMainjPanel = new javax.swing.JPanel();
+        modifyMembrejButton = new javax.swing.JButton();
+        modifyMembre_loginjLabel = new javax.swing.JLabel();
+        modifyMembre_loginjTextField = new javax.swing.JTextField();
+        modifyMembre_passwordjLabel = new javax.swing.JLabel();
+        modifyMembre_passwordjPasswordField = new javax.swing.JPasswordField();
+        modifyMembre_nomjLabel = new javax.swing.JLabel();
+        modifyMembre_nomjTextField = new javax.swing.JTextField();
+        modifyMembre_prenomjLabel = new javax.swing.JLabel();
+        modifyMembre_prenomjTextField = new javax.swing.JTextField();
+        modifyMembre_adressejLabel = new javax.swing.JLabel();
+        modifyMembre_adressejTextField = new javax.swing.JTextField();
+        modifyMembre_code_postaljLabel = new javax.swing.JLabel();
+        modifyMembre_code_postaljTextField = new javax.swing.JTextField();
+        modifyMembre_villejLabel = new javax.swing.JLabel();
+        modifyMembre_villejTextField = new javax.swing.JTextField();
+        modifyMembre_num_civiljLabel = new javax.swing.JLabel();
+        modifyMembre_num_civiljTextField = new javax.swing.JTextField();
+        modifyMembre_teljLabel = new javax.swing.JLabel();
+        modifyMembre_teljTextField = new javax.swing.JTextField();
+        modifyMembre_portablejLabel = new javax.swing.JLabel();
+        modifyMembre_portablejTextField = new javax.swing.JTextField();
+        modifyMembre_emailjLabel = new javax.swing.JLabel();
+        modifyMembre_emailjTextField = new javax.swing.JTextField();
+        modifyMembre_commentairejLabel = new javax.swing.JLabel();
+        modifyMembre_commentairejTextField = new javax.swing.JTextField();
+        modifyMembre_date_vmjLabel = new javax.swing.JLabel();
+        modifyMembre_date_vmjTextField = new javax.swing.JTextField();
+        modifyMembre_validite_vmjLabel = new javax.swing.JLabel();
+        modifyMembre_validite_vmjTextField = new javax.swing.JTextField();
+        modifyMembre_date_seqjLabel = new javax.swing.JLabel();
+        modifyMembre_date_seqjTextField = new javax.swing.JTextField();
+        modifyMembre_validite_seqjLabel = new javax.swing.JLabel();
+        modifyMembre_validite_seqjTextField = new javax.swing.JTextField();
+        modifyMembre_num_badgejLabel = new javax.swing.JLabel();
+        modifyMembre_num_badgejTextField = new javax.swing.JTextField();
+        modifyMembre_num_qualifjLabel = new javax.swing.JLabel();
+        modifyMembre_num_qualifjTextField = new javax.swing.JTextField();
+        modifyMembre_professionjLabel = new javax.swing.JLabel();
+        modifyMembre_professionjTextField = new javax.swing.JTextField();
+        modifyMembre_date_naissancejLabel = new javax.swing.JLabel();
+        modifyMembre_date_naissancejTextField = new javax.swing.JTextField();
+        modifyMembre_lieu_naissancejLabel = new javax.swing.JLabel();
+        modifyMembre_lieu_naissancejTextField = new javax.swing.JTextField();
+        modifyMembre_carte_federalejLabel = new javax.swing.JLabel();
+        modifyMembre_carte_federalejTextField = new javax.swing.JTextField();
+        modifyMembre_date_attestationjLabel = new javax.swing.JLabel();
+        modifyMembre_date_attestationjTextField = new javax.swing.JTextField();
+        modifyMembre_date_theorique_bbjLabel = new javax.swing.JLabel();
+        modifyMembre_date_theorique_bbjTextField = new javax.swing.JTextField();
+        modifyMembre_date_theorique_pplajLabel = new javax.swing.JLabel();
+        modifyMembre_date_theorique_pplajTextField = new javax.swing.JTextField();
+        modifyMembre_date_bbjLabel = new javax.swing.JLabel();
+        modifyMembre_date_bbjTextField = new javax.swing.JTextField();
+        modifyMembre_date_pplajLabel = new javax.swing.JLabel();
+        modifyMembre_date_pplajTextField = new javax.swing.JTextField();
+        modifyMembre_numero_bbjLabel = new javax.swing.JLabel();
+        modifyMembre_numero_bbjTextField = new javax.swing.JTextField();
+        modifyMembre_numera_pplajLabel = new javax.swing.JLabel();
+        modifyMembre_numera_pplajTextField = new javax.swing.JTextField();
+        modifyMembre_date_entreejLabel = new javax.swing.JLabel();
+        modifyMembre_date_entreejTextField = new javax.swing.JTextField();
+        modifyMembre_membre_actifjLabel = new javax.swing.JLabel();
+        modifyMembre_membre_actifjCheckBox = new javax.swing.JCheckBox();
+        modifyMembre_membre_inscritjLabel = new javax.swing.JLabel();
+        modifyMembre_membre_inscritjCheckBox = new javax.swing.JCheckBox();
+        deleteMembrejDialog = new javax.swing.JDialog();
+        deleteMembreHeadjPanel = new javax.swing.JPanel();
+        deleteMembreTitlejLabel = new javax.swing.JLabel();
+        deleteMembreSeparatorjPanel = new javax.swing.JPanel();
+        deleteMembreMainjPanel = new javax.swing.JPanel();
+        deleteMembre_canceljButton = new javax.swing.JButton();
+        deleteMembre_submitjButton = new javax.swing.JButton();
         headjPanel = new javax.swing.JPanel();
         titlejLabel = new javax.swing.JLabel();
         backToMenujButton = new javax.swing.JButton();
@@ -78,242 +252,982 @@ public class menuAeroclub extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        getAvionsjButton = new javax.swing.JButton();
+        getInstructeursjButton = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         getMembresjButton = new javax.swing.JButton();
+        instructeursjPanel = new javax.swing.JPanel();
+        openModifyInstructeurjPaneljButton = new javax.swing.JButton();
+        openShowInstructeurjPaneljButton = new javax.swing.JButton();
+        openAddInstructeurjPaneljButton = new javax.swing.JButton();
+        openDeleteInstructeurjPaneljButton = new javax.swing.JButton();
+        instructeursjScrollPane = new javax.swing.JScrollPane();
+        instructeursjTable = new javax.swing.JTable();
+        avionsjPanel = new javax.swing.JPanel();
+        openModifyAvionjButton = new javax.swing.JButton();
+        openShowAvionjButton = new javax.swing.JButton();
+        openAddAvionjButton = new javax.swing.JButton();
+        openDeleteAvionjButton = new javax.swing.JButton();
+        avionsjScrollPane = new javax.swing.JScrollPane();
+        avionsjTable = new javax.swing.JTable();
         membresjPanel = new javax.swing.JPanel();
-        openModifyMemberjButton = new javax.swing.JButton();
-        openShowMemberjButton = new javax.swing.JButton();
-        openAddMemberjButton = new javax.swing.JButton();
-        openDeleteMember = new javax.swing.JButton();
+        openModifyMembrejButton = new javax.swing.JButton();
+        openShowMembrejButton = new javax.swing.JButton();
+        openAddMembrejButton = new javax.swing.JButton();
+        openDeleteMembrejButton = new javax.swing.JButton();
         membresjScrollPane = new javax.swing.JScrollPane();
         membresjTable = new javax.swing.JTable();
+        categoriesjPanel = new javax.swing.JPanel();
+        openModifyCategoriejPaneljButton = new javax.swing.JButton();
+        openShowCategoriejPaneljButton = new javax.swing.JButton();
+        openAddCategoriejPaneljButton = new javax.swing.JButton();
+        openDeleteCategoriejPaneljButton = new javax.swing.JButton();
+        categoriesjScrollPane = new javax.swing.JScrollPane();
+        categoriesjTable = new javax.swing.JTable();
 
-        addMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        addMemberjDialog.setAlwaysOnTop(true);
-        addMemberjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
-        addMemberjDialog.setIconImage(null);
-        addMemberjDialog.setLocationByPlatform(true);
-        addMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
-        addMemberjDialog.setResizable(false);
-        addMemberjDialog.setSize(new java.awt.Dimension(400, 600));
-        addMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        showMembrejDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        showMembrejDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        showMembrejDialog.setMinimumSize(new java.awt.Dimension(800, 600));
+        showMembrejDialog.setModal(true);
+        showMembrejDialog.setResizable(false);
+        showMembrejDialog.setSize(new java.awt.Dimension(800, 600));
+        showMembrejDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        showMembreHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        addMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        addMemberTitlejLabel.setText("Ajout d'un membre");
-        addMemberHeadjPanel.add(addMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        showMembreTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        showMembreTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showMembreTitlejLabel.setText("Détails du membre");
+        showMembreHeadjPanel.add(showMembreTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        addMemberjDialog.getContentPane().add(addMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        showMembrejDialog.getContentPane().add(showMembreHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        addMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
-        addMemberjDialog.getContentPane().add(addMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+        showMembreSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        showMembrejDialog.getContentPane().add(showMembreSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 1));
 
-        addMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        showMembreMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addMemberjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMemberjButton.setText("Ajouter");
-        addMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        showMembre_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_num_membrejLabel.setText("Numero :");
+        showMembre_num_membrejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
+
+        showMembre_nomjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_nomjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_nomjLabel.setText("Nom :");
+        showMembre_nomjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_nomjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
+
+        showMembre_prenomjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_prenomjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_prenomjLabel.setText("Prénom :");
+        showMembre_prenomjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_prenomjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
+
+        showMembre_num_membreDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_num_membreDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
+
+        showMembre_nomDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_nomDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
+
+        showMembre_prenomDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_prenomDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
+
+        showMembre_adressejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_adressejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_adressejLabel.setText("Adresse :");
+        showMembre_adressejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_adressejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
+
+        showMembre_adresseDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_adresseDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
+
+        showMembre_code_postaljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_code_postaljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_code_postaljLabel.setText("Code postal :");
+        showMembre_code_postaljLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_code_postaljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
+
+        showMembre_code_postalDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_code_postalDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
+
+        showMembre_villejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_villejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_villejLabel.setText("Ville :");
+        showMembre_villejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_villejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
+
+        showMembre_villeDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_villeDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
+
+        showMembre_num_civiljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_num_civiljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_num_civiljLabel.setText("Numéro civil :");
+        showMembre_num_civiljLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_num_civiljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
+
+        showMembre_num_civilDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_num_civilDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
+
+        showMembre_teljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_teljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_teljLabel.setText("Téléphone :");
+        showMembre_teljLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_teljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
+
+        showMembre_telDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_telDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
+
+        showMembre_portablejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_portablejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_portablejLabel.setText("Portable :");
+        showMembre_portablejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_portablejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+
+        showMembre_portableDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_portableDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
+
+        showMembre_emailjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_emailjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_emailjLabel.setText("Email :");
+        showMembre_emailjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_emailjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
+
+        showMembre_emailDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_emailDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
+
+        showMembre_commentairejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_commentairejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_commentairejLabel.setText("Commentaire :");
+        showMembre_commentairejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_commentairejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 140, 20));
+
+        showMembre_commentaireDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_commentaireDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 200, 20));
+
+        showMembre_date_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_vmjLabel.setText("Date VM :");
+        showMembre_date_vmjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 140, 20));
+
+        showMembre_date_vmDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_vmDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 200, 20));
+
+        showMembre_validite_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_validite_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_validite_vmjLabel.setText("Validité VM :");
+        showMembre_validite_vmjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_validite_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 140, 20));
+
+        showMembre_validite_vmDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_validite_vmDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 200, 20));
+
+        showMembre_date_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_seqjLabel.setText("Date séquence :");
+        showMembre_date_seqjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 140, 20));
+
+        showMembre_date_seqDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_seqDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 200, 20));
+
+        showMembre_validite_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_validite_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_validite_seqjLabel.setText("Validité séquence :");
+        showMembre_validite_seqjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_validite_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 140, 20));
+
+        showMembre_validite_seqDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_validite_seqDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 200, 20));
+
+        showMembre_num_badgejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_num_badgejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_num_badgejLabel.setText("Numéro badge :");
+        showMembre_num_badgejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_num_badgejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 140, 20));
+
+        showMembre_num_badgeDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_num_badgeDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 200, 20));
+
+        showMembre_num_qualifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_num_qualifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_num_qualifjLabel.setText("Numéro qualification :");
+        showMembre_num_qualifjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_num_qualifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 140, 20));
+
+        showMembre_num_qualifDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_num_qualifDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 200, 20));
+
+        showMembre_professionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_professionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_professionjLabel.setText("Proféssion :");
+        showMembre_professionjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_professionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 140, 20));
+
+        showMembre_professionDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_professionDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 200, 20));
+
+        showMembre_date_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_naissancejLabel.setText("Date de naissance :");
+        showMembre_date_naissancejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, 20));
+
+        showMembre_date_naissanceDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_naissanceDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 200, 20));
+
+        showMembre_lieu_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_lieu_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_lieu_naissancejLabel.setText("Lieu de naissance :");
+        showMembre_lieu_naissancejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_lieu_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 140, 20));
+
+        showMembre_lieu_naissanceDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_lieu_naissanceDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 200, 20));
+
+        showMembre_carte_federalejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_carte_federalejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_carte_federalejLabel.setText("Carte fédérale :");
+        showMembre_carte_federalejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_carte_federalejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 140, 20));
+
+        showMembre_carte_federaleDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_carte_federaleDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 200, 20));
+
+        showMembre_date_attestationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_attestationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_attestationjLabel.setText("Date d'attestation :");
+        showMembre_date_attestationjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_attestationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 140, 20));
+
+        showMembre_date_attestationDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_attestationDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 200, 20));
+
+        showMembre_date_theorique_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_theorique_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_theorique_bbjLabel.setText("Date théorique BB :");
+        showMembre_date_theorique_bbjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_theorique_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 140, 20));
+
+        showMembre_date_theorique_bbDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_theorique_bbDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 200, 20));
+
+        showMembre_date_theorique_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_theorique_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_theorique_pplajLabel.setText("Date théorique PPLA :");
+        showMembre_date_theorique_pplajLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_theorique_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 140, 20));
+
+        showMembre_date_theorique_pplaDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_theorique_pplaDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 200, 20));
+
+        showMembre_date_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_bbjLabel.setText("Date BB :");
+        showMembre_date_bbjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 140, 20));
+
+        showMembre_date_bbDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_bbDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 200, 20));
+
+        showMembre_date_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_pplajLabel.setText("Date PPLA :");
+        showMembre_date_pplajLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 140, 20));
+
+        showMembre_date_pplaDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_pplaDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 200, 20));
+
+        showMembre_numero_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_numero_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_numero_bbjLabel.setText("Numéro BB :");
+        showMembre_numero_bbjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_numero_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 140, 20));
+
+        showMembre_numero_bbDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_numero_bbDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 200, 20));
+
+        showMembre_numera_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_numera_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_numera_pplajLabel.setText("Numéro PPLA :");
+        showMembre_numera_pplajLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_numera_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 140, 20));
+
+        showMembre_numera_pplaDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_numera_pplaDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 200, 20));
+
+        showMembre_date_entreejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_date_entreejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_date_entreejLabel.setText("Date d'entrée :");
+        showMembre_date_entreejLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_date_entreejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 140, 20));
+
+        showMembre_date_entreeDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_date_entreeDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 200, 20));
+
+        showMembre_membre_actifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_membre_actifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_membre_actifjLabel.setText("Membre actif :");
+        showMembre_membre_actifjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_membre_actifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 140, 20));
+
+        showMembre_membre_actifDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_membre_actifDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 200, 20));
+
+        showMembre_membre_inscritjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_membre_inscritjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_membre_inscritjLabel.setText("Membre inscrit :");
+        showMembre_membre_inscritjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_membre_inscritjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 140, 20));
+
+        showMembre_membre_inscritDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_membre_inscritDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 200, 20));
+
+        showMembre_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembre_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showMembre_loginjLabel.setText("Indentifiant :");
+        showMembre_loginjLabel.setToolTipText("");
+        showMembreMainjPanel.add(showMembre_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
+
+        showMembre_loginDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showMembreMainjPanel.add(showMembre_loginDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
+
+        showMembrejDialog.getContentPane().add(showMembreMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 550));
+
+        showMembrejDialog.setLocationRelativeTo(null);
+        showMembrejDialog.pack();
+
+        addMembrejDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addMembrejDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        addMembrejDialog.setIconImage(null);
+        addMembrejDialog.setMinimumSize(new java.awt.Dimension(800, 600));
+        addMembrejDialog.setModal(true);
+        addMembrejDialog.setResizable(false);
+        addMembrejDialog.setSize(new java.awt.Dimension(800, 600));
+        addMembrejDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMembreHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMembreTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        addMembreTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addMembreTitlejLabel.setText("Ajout d'un membre");
+        addMembreHeadjPanel.add(addMembreTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
+
+        addMembrejDialog.getContentPane().add(addMembreHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
+
+        addMembreSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        addMembrejDialog.getContentPane().add(addMembreSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 1));
+
+        addMembreMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addMembrejButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembrejButton.setText("Ajouter");
+        addMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addMemberjButtonActionPerformed(evt);
+                addMembrejButtonActionPerformed(evt);
             }
         });
-        addMemberMainjPanel.add(addMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 100, 30));
+        addMembreMainjPanel.add(addMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 100, 30));
 
-        addMember_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMember_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        addMember_loginjLabel.setText("login");
-        addMemberMainjPanel.add(addMember_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
+        addMembre_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_loginjLabel.setText("Identifiant :");
+        addMembreMainjPanel.add(addMembre_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
 
-        addMember_num_membrejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMemberMainjPanel.add(addMember_num_membrejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 20));
+        addMembre_loginjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_loginjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
 
-        addMember_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMember_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        addMember_passwordjLabel.setText("password");
-        addMemberMainjPanel.add(addMember_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 20));
+        addMembre_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_passwordjLabel.setText("Mot de passe :");
+        addMembreMainjPanel.add(addMembre_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
 
-        addMember_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMember_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        addMember_num_membrejLabel.setText("num_membre");
-        addMemberMainjPanel.add(addMember_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+        addMembre_passwordjPasswordField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_passwordjPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
 
-        addMember_loginjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMemberMainjPanel.add(addMember_loginjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 200, 20));
+        addMembre_nomjLabel1.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_nomjLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_nomjLabel1.setText("Nom :");
+        addMembreMainjPanel.add(addMembre_nomjLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
 
-        addMember_passwordjPasswordField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        addMemberMainjPanel.add(addMember_passwordjPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 20));
+        addMembre_nomjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_nomjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
 
-        addMemberjDialog.getContentPane().add(addMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+        addMembre_prenomjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_prenomjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_prenomjLabel.setText("Prénom :");
+        addMembreMainjPanel.add(addMembre_prenomjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
 
-        addMemberjDialog.setLocationRelativeTo(null);
+        addMembre_prenomjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_prenomjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
 
-        showMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        showMemberjDialog.setAlwaysOnTop(true);
-        showMemberjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
-        showMemberjDialog.setLocationByPlatform(true);
-        showMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
-        showMemberjDialog.setResizable(false);
-        showMemberjDialog.setSize(new java.awt.Dimension(400, 600));
-        showMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_adressejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_adressejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_adressejLabel.setText("Adresse :");
+        addMembreMainjPanel.add(addMembre_adressejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
 
-        showMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_adressejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_adressejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
 
-        showMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        showMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        showMemberTitlejLabel.setText("Détails du membre");
-        showMemberHeadjPanel.add(showMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        addMembre_code_postaljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_code_postaljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_code_postaljLabel.setText("Code postal :");
+        addMembreMainjPanel.add(addMembre_code_postaljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
 
-        showMemberjDialog.getContentPane().add(showMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        addMembre_code_postaljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_code_postaljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
 
-        showMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
-        showMemberjDialog.getContentPane().add(showMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+        addMembre_villejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_villejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_villejLabel.setText("Ville :");
+        addMembreMainjPanel.add(addMembre_villejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
 
-        showMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_villejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_villejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
 
-        showMember_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        showMember_num_membrejLabel.setText("num_membre :");
-        showMember_num_membrejLabel.setToolTipText("");
-        showMemberMainjPanel.add(showMember_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+        addMembre_num_civiljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_num_civiljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_num_civiljLabel.setText("Numéro civil :");
+        addMembreMainjPanel.add(addMembre_num_civiljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
 
-        showMember_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        showMember_loginjLabel.setText("login :");
-        showMember_loginjLabel.setToolTipText("");
-        showMemberMainjPanel.add(showMember_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
+        addMembre_num_civiljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_num_civiljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
 
-        showMember_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        showMember_passwordjLabel.setText("password :");
-        showMember_passwordjLabel.setToolTipText("");
-        showMemberMainjPanel.add(showMember_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 20));
+        addMembre_teljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_teljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_teljLabel.setText("Téléphone :");
+        addMembreMainjPanel.add(addMembre_teljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
 
-        showMember_num_membreDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_num_membreDatajLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        showMemberMainjPanel.add(showMember_num_membreDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 20));
+        addMembre_teljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_teljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
 
-        showMember_loginDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_loginDatajLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        showMemberMainjPanel.add(showMember_loginDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 200, 20));
+        addMembre_portablejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_portablejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_portablejLabel.setText("Portable :");
+        addMembreMainjPanel.add(addMembre_portablejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
 
-        showMember_passwordDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        showMember_passwordDatajLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        showMemberMainjPanel.add(showMember_passwordDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 20));
+        addMembre_portablejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_portablejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
 
-        showMemberjDialog.getContentPane().add(showMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+        addMembre_emailjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_emailjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_emailjLabel.setText("Email :");
+        addMembreMainjPanel.add(addMembre_emailjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
 
-        showMemberjDialog.setLocationRelativeTo(null);
+        addMembre_emailjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_emailjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
 
-        modifyMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        modifyMemberjDialog.setAlwaysOnTop(true);
-        modifyMemberjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
-        modifyMemberjDialog.setLocationByPlatform(true);
-        modifyMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
-        modifyMemberjDialog.setPreferredSize(new java.awt.Dimension(400, 600));
-        modifyMemberjDialog.setResizable(false);
-        modifyMemberjDialog.setSize(new java.awt.Dimension(400, 600));
-        modifyMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_commentairejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_commentairejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_commentairejLabel.setText("Commentaire :");
+        addMembreMainjPanel.add(addMembre_commentairejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 140, 20));
 
-        modifyMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_commentairejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_commentairejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 200, 20));
 
-        modifyMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        modifyMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        modifyMemberTitlejLabel.setText("Modification du membre");
-        modifyMemberHeadjPanel.add(modifyMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        addMembre_date_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_vmjLabel.setText("Date VM :");
+        addMembreMainjPanel.add(addMembre_date_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 140, 20));
 
-        modifyMemberjDialog.getContentPane().add(modifyMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        addMembre_date_vmjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_vmjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 200, 20));
 
-        modifyMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
-        modifyMemberjDialog.getContentPane().add(modifyMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+        addMembre_validite_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_validite_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_validite_vmjLabel.setText("Validité VM :");
+        addMembreMainjPanel.add(addMembre_validite_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 140, 20));
 
-        modifyMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        addMembre_validite_vmjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_validite_vmjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 200, 20));
 
-        modifyMemberjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMemberjButton.setText("Modifier");
-        modifyMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        addMembre_date_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_seqjLabel.setText("Date séquence :");
+        addMembreMainjPanel.add(addMembre_date_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 140, 20));
+
+        addMembre_date_seqjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_seqjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 200, 20));
+
+        addMembre_validite_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_validite_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_validite_seqjLabel.setText("Validité séquence :");
+        addMembreMainjPanel.add(addMembre_validite_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 140, 20));
+
+        addMembre_validite_seqjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_validite_seqjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 200, 20));
+
+        addMembre_num_badgejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_num_badgejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_num_badgejLabel.setText("Numéro badge :");
+        addMembreMainjPanel.add(addMembre_num_badgejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 140, 20));
+
+        addMembre_num_badgejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_num_badgejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 200, 20));
+
+        addMembre_num_qualifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_num_qualifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_num_qualifjLabel.setText("Numéro qualification :");
+        addMembreMainjPanel.add(addMembre_num_qualifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 140, 20));
+
+        addMembre_num_qualifjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_num_qualifjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 200, 20));
+
+        addMembre_professionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_professionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_professionjLabel.setText("Profession :");
+        addMembreMainjPanel.add(addMembre_professionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, 20));
+
+        addMembre_professionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_professionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 200, 20));
+
+        addMembre_date_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_naissancejLabel.setText("Date de naissance :");
+        addMembreMainjPanel.add(addMembre_date_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 140, 20));
+
+        addMembre_date_naissancejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_naissancejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 200, 20));
+
+        addMembre_lieu_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_lieu_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_lieu_naissancejLabel.setText("Lieu de naissance :");
+        addMembreMainjPanel.add(addMembre_lieu_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 140, 20));
+
+        addMembre_lieu_naissancejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_lieu_naissancejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 200, 20));
+
+        addMembre_carte_federalejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_carte_federalejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_carte_federalejLabel.setText("Carte fedérale :");
+        addMembreMainjPanel.add(addMembre_carte_federalejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 140, 20));
+
+        addMembre_carte_federalejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_carte_federalejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 200, 20));
+
+        addMembre_date_attestationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_attestationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_attestationjLabel.setText("Date d'attestation :");
+        addMembreMainjPanel.add(addMembre_date_attestationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 140, 20));
+
+        addMembre_date_attestationjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_attestationjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 200, 20));
+
+        addMembre_date_theorique_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_theorique_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_theorique_bbjLabel.setText("Date théorique BB :");
+        addMembreMainjPanel.add(addMembre_date_theorique_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 140, 20));
+
+        addMembre_date_theorique_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_theorique_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 200, 20));
+
+        addMembre_date_theorique_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_theorique_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_theorique_pplajLabel.setText("Date théorique PPLA :");
+        addMembreMainjPanel.add(addMembre_date_theorique_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 140, 20));
+
+        addMembre_date_theorique_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_theorique_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 200, 20));
+
+        addMembre_date_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_bbjLabel.setText("Date BB :");
+        addMembreMainjPanel.add(addMembre_date_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 140, 20));
+
+        addMembre_date_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 200, 20));
+
+        addMembre_date_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_pplajLabel.setText("Date PPLA :");
+        addMembreMainjPanel.add(addMembre_date_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 140, 20));
+
+        addMembre_date_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 200, 20));
+
+        addMembre_numero_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_numero_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_numero_bbjLabel.setText("Numéro BB :");
+        addMembreMainjPanel.add(addMembre_numero_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 140, 20));
+
+        addMembre_numero_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_numero_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 200, 20));
+
+        addMembre_numera_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_numera_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_numera_pplajLabel.setText("Numéro PPLA :");
+        addMembreMainjPanel.add(addMembre_numera_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 140, 20));
+
+        addMembre_numera_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_numera_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 200, 20));
+
+        addMembre_date_entreejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_date_entreejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_date_entreejLabel.setText("Date d'entrée :");
+        addMembreMainjPanel.add(addMembre_date_entreejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 140, 20));
+
+        addMembre_date_entreejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addMembreMainjPanel.add(addMembre_date_entreejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 200, 20));
+
+        addMembre_membre_actifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_membre_actifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_membre_actifjLabel.setText("Membre actif :");
+        addMembreMainjPanel.add(addMembre_membre_actifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 140, 20));
+
+        addMembre_membre_actifjCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyMemberjButtonActionPerformed(evt);
+                addMembre_membre_actifjCheckBoxActionPerformed(evt);
             }
         });
-        modifyMemberMainjPanel.add(modifyMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 100, 30));
+        addMembreMainjPanel.add(addMembre_membre_actifjCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, -1));
 
-        modifyMember_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMember_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        modifyMember_loginjLabel.setText("login");
-        modifyMemberMainjPanel.add(modifyMember_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, 20));
+        addMembre_membre_inscritjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addMembre_membre_inscritjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addMembre_membre_inscritjLabel.setText("Membre inscrit :");
+        addMembreMainjPanel.add(addMembre_membre_inscritjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 140, 20));
+        addMembreMainjPanel.add(addMembre_membre_inscritjCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, -1, -1));
 
-        modifyMember_num_membrejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMemberMainjPanel.add(modifyMember_num_membrejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 20));
+        addMembrejDialog.getContentPane().add(addMembreMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 550));
 
-        modifyMember_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMember_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        modifyMember_passwordjLabel.setText("password");
-        modifyMemberMainjPanel.add(modifyMember_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, 20));
+        addMembrejDialog.setLocationRelativeTo(null);
+        addMembrejDialog.pack();
 
-        modifyMember_num_membrejLabel.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMember_num_membrejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        modifyMember_num_membrejLabel.setText("num_membre");
-        modifyMemberMainjPanel.add(modifyMember_num_membrejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 100, 20));
+        modifyMembrejDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        modifyMembrejDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        modifyMembrejDialog.setMinimumSize(new java.awt.Dimension(800, 600));
+        modifyMembrejDialog.setModal(true);
+        modifyMembrejDialog.setResizable(false);
+        modifyMembrejDialog.setSize(new java.awt.Dimension(800, 600));
+        modifyMembrejDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        modifyMember_loginjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMemberMainjPanel.add(modifyMember_loginjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 200, 20));
+        modifyMembreHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        modifyMember_passwordjPasswordField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        modifyMemberMainjPanel.add(modifyMember_passwordjPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 200, 20));
+        modifyMembreTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        modifyMembreTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        modifyMembreTitlejLabel.setText("Modification du membre");
+        modifyMembreHeadjPanel.add(modifyMembreTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        modifyMemberjDialog.getContentPane().add(modifyMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+        modifyMembrejDialog.getContentPane().add(modifyMembreHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        modifyMemberjDialog.setLocationRelativeTo(null);
+        modifyMembreSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        modifyMembrejDialog.getContentPane().add(modifyMembreSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 1));
 
-        deleteMemberjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        deleteMemberjDialog.setAlwaysOnTop(true);
-        deleteMemberjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 180));
-        deleteMemberjDialog.setMinimumSize(new java.awt.Dimension(400, 180));
-        deleteMemberjDialog.setPreferredSize(new java.awt.Dimension(400, 180));
-        deleteMemberjDialog.setResizable(false);
-        deleteMemberjDialog.setSize(new java.awt.Dimension(400, 180));
-        deleteMemberjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        modifyMembreMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        deleteMemberHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        deleteMemberTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
-        deleteMemberTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        deleteMemberTitlejLabel.setText("Suppression du membre");
-        deleteMemberHeadjPanel.add(deleteMemberTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
-
-        deleteMemberjDialog.getContentPane().add(deleteMemberHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
-
-        deleteMemberSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
-        deleteMemberjDialog.getContentPane().add(deleteMemberSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
-
-        deleteMemberMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        deleteMember_canceljButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        deleteMember_canceljButton.setText("Annuler");
-        deleteMember_canceljButton.addActionListener(new java.awt.event.ActionListener() {
+        modifyMembrejButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembrejButton.setText("Modifier");
+        modifyMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteMember_canceljButtonActionPerformed(evt);
+                modifyMembrejButtonActionPerformed(evt);
             }
         });
-        deleteMemberMainjPanel.add(deleteMember_canceljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 50, 100, 30));
+        modifyMembreMainjPanel.add(modifyMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 100, 30));
 
-        deleteMember_submitjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
-        deleteMember_submitjButton.setText("Supprimer");
-        deleteMember_submitjButton.addActionListener(new java.awt.event.ActionListener() {
+        modifyMembre_loginjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_loginjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_loginjLabel.setText("Identifiant :");
+        modifyMembreMainjPanel.add(modifyMembre_loginjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
+
+        modifyMembre_loginjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_loginjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
+
+        modifyMembre_passwordjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_passwordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_passwordjLabel.setText("Mot de passe :");
+        modifyMembreMainjPanel.add(modifyMembre_passwordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
+
+        modifyMembre_passwordjPasswordField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_passwordjPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
+
+        modifyMembre_nomjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_nomjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_nomjLabel.setText("Nom :");
+        modifyMembreMainjPanel.add(modifyMembre_nomjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
+
+        modifyMembre_nomjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_nomjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
+
+        modifyMembre_prenomjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_prenomjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_prenomjLabel.setText("Prénom :");
+        modifyMembreMainjPanel.add(modifyMembre_prenomjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
+
+        modifyMembre_prenomjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_prenomjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
+
+        modifyMembre_adressejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_adressejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_adressejLabel.setText("Adresse :");
+        modifyMembreMainjPanel.add(modifyMembre_adressejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
+
+        modifyMembre_adressejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_adressejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
+
+        modifyMembre_code_postaljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_code_postaljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_code_postaljLabel.setText("Code postal :");
+        modifyMembreMainjPanel.add(modifyMembre_code_postaljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
+
+        modifyMembre_code_postaljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_code_postaljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
+
+        modifyMembre_villejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_villejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_villejLabel.setText("Ville :");
+        modifyMembreMainjPanel.add(modifyMembre_villejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
+
+        modifyMembre_villejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_villejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
+
+        modifyMembre_num_civiljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_num_civiljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_num_civiljLabel.setText("Numéro civil :");
+        modifyMembreMainjPanel.add(modifyMembre_num_civiljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
+
+        modifyMembre_num_civiljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_num_civiljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
+
+        modifyMembre_teljLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_teljLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_teljLabel.setText("Téléphone :");
+        modifyMembreMainjPanel.add(modifyMembre_teljLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
+
+        modifyMembre_teljTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_teljTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
+
+        modifyMembre_portablejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_portablejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_portablejLabel.setText("Portable :");
+        modifyMembreMainjPanel.add(modifyMembre_portablejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+
+        modifyMembre_portablejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_portablejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
+
+        modifyMembre_emailjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_emailjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_emailjLabel.setText("Email :");
+        modifyMembreMainjPanel.add(modifyMembre_emailjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
+
+        modifyMembre_emailjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_emailjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
+
+        modifyMembre_commentairejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_commentairejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_commentairejLabel.setText("Commentaire :");
+        modifyMembreMainjPanel.add(modifyMembre_commentairejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 140, 20));
+
+        modifyMembre_commentairejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_commentairejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 200, 20));
+
+        modifyMembre_date_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_vmjLabel.setText("Date VM :");
+        modifyMembreMainjPanel.add(modifyMembre_date_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 140, 20));
+
+        modifyMembre_date_vmjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_vmjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 200, 20));
+
+        modifyMembre_validite_vmjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_validite_vmjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_validite_vmjLabel.setText("Validité VM :");
+        modifyMembreMainjPanel.add(modifyMembre_validite_vmjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 140, 20));
+
+        modifyMembre_validite_vmjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_validite_vmjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 200, 20));
+
+        modifyMembre_date_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_seqjLabel.setText("Date séquence :");
+        modifyMembreMainjPanel.add(modifyMembre_date_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 140, 20));
+
+        modifyMembre_date_seqjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_seqjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 200, 20));
+
+        modifyMembre_validite_seqjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_validite_seqjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_validite_seqjLabel.setText("Validité séquence :");
+        modifyMembreMainjPanel.add(modifyMembre_validite_seqjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 140, 20));
+
+        modifyMembre_validite_seqjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_validite_seqjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 200, 20));
+
+        modifyMembre_num_badgejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_num_badgejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_num_badgejLabel.setText("Numéro badge :");
+        modifyMembreMainjPanel.add(modifyMembre_num_badgejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 140, 20));
+
+        modifyMembre_num_badgejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_num_badgejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 200, 20));
+
+        modifyMembre_num_qualifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_num_qualifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_num_qualifjLabel.setText("Numéro qualification :");
+        modifyMembreMainjPanel.add(modifyMembre_num_qualifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 140, 20));
+
+        modifyMembre_num_qualifjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_num_qualifjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 200, 20));
+
+        modifyMembre_professionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_professionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_professionjLabel.setText("Profession :");
+        modifyMembreMainjPanel.add(modifyMembre_professionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, 20));
+
+        modifyMembre_professionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_professionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 200, 20));
+
+        modifyMembre_date_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_naissancejLabel.setText("Date de naissance :");
+        modifyMembreMainjPanel.add(modifyMembre_date_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 140, 20));
+
+        modifyMembre_date_naissancejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_naissancejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 200, 20));
+
+        modifyMembre_lieu_naissancejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_lieu_naissancejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_lieu_naissancejLabel.setText("Lieu de naissance :");
+        modifyMembreMainjPanel.add(modifyMembre_lieu_naissancejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 140, 20));
+
+        modifyMembre_lieu_naissancejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_lieu_naissancejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 200, 20));
+
+        modifyMembre_carte_federalejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_carte_federalejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_carte_federalejLabel.setText("Carte fédérale :");
+        modifyMembreMainjPanel.add(modifyMembre_carte_federalejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 140, 20));
+
+        modifyMembre_carte_federalejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_carte_federalejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 200, 20));
+
+        modifyMembre_date_attestationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_attestationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_attestationjLabel.setText("Date d'attestation :");
+        modifyMembreMainjPanel.add(modifyMembre_date_attestationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 140, 20));
+
+        modifyMembre_date_attestationjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_attestationjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 200, 20));
+
+        modifyMembre_date_theorique_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_theorique_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_theorique_bbjLabel.setText("Date théorique BB :");
+        modifyMembreMainjPanel.add(modifyMembre_date_theorique_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 140, 20));
+
+        modifyMembre_date_theorique_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_theorique_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 200, 20));
+
+        modifyMembre_date_theorique_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_theorique_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_theorique_pplajLabel.setText("Date théorique PPLA :");
+        modifyMembreMainjPanel.add(modifyMembre_date_theorique_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 140, 20));
+
+        modifyMembre_date_theorique_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_theorique_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 200, 20));
+
+        modifyMembre_date_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_bbjLabel.setText("Date BB :");
+        modifyMembreMainjPanel.add(modifyMembre_date_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 140, 20));
+
+        modifyMembre_date_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 200, 20));
+
+        modifyMembre_date_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_pplajLabel.setText("Date PPLA :");
+        modifyMembreMainjPanel.add(modifyMembre_date_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 140, 20));
+
+        modifyMembre_date_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 200, 20));
+
+        modifyMembre_numero_bbjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_numero_bbjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_numero_bbjLabel.setText("Numéro BB :");
+        modifyMembreMainjPanel.add(modifyMembre_numero_bbjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 140, 20));
+
+        modifyMembre_numero_bbjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_numero_bbjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 200, 20));
+
+        modifyMembre_numera_pplajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_numera_pplajLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_numera_pplajLabel.setText("Numéro PPLA :");
+        modifyMembreMainjPanel.add(modifyMembre_numera_pplajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 140, 20));
+
+        modifyMembre_numera_pplajTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_numera_pplajTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 200, 20));
+
+        modifyMembre_date_entreejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_date_entreejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_date_entreejLabel.setText("Date d'entrée :");
+        modifyMembreMainjPanel.add(modifyMembre_date_entreejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 140, 20));
+
+        modifyMembre_date_entreejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyMembreMainjPanel.add(modifyMembre_date_entreejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 200, 20));
+
+        modifyMembre_membre_actifjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_membre_actifjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_membre_actifjLabel.setText("Membre actif :");
+        modifyMembreMainjPanel.add(modifyMembre_membre_actifjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 140, 20));
+        modifyMembreMainjPanel.add(modifyMembre_membre_actifjCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, -1));
+
+        modifyMembre_membre_inscritjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyMembre_membre_inscritjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyMembre_membre_inscritjLabel.setText("Membre inscrit :");
+        modifyMembreMainjPanel.add(modifyMembre_membre_inscritjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 140, 20));
+        modifyMembreMainjPanel.add(modifyMembre_membre_inscritjCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, -1, -1));
+
+        modifyMembrejDialog.getContentPane().add(modifyMembreMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 800, 550));
+
+        modifyMembrejDialog.setLocationRelativeTo(null);
+        modifyMembrejDialog.pack();
+
+        deleteMembrejDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        deleteMembrejDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 180));
+        deleteMembrejDialog.setMinimumSize(new java.awt.Dimension(400, 180));
+        deleteMembrejDialog.setModal(true);
+        deleteMembrejDialog.setResizable(false);
+        deleteMembrejDialog.setSize(new java.awt.Dimension(400, 180));
+        deleteMembrejDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        deleteMembreHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        deleteMembreTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        deleteMembreTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        deleteMembreTitlejLabel.setText("Suppression du membre");
+        deleteMembreHeadjPanel.add(deleteMembreTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        deleteMembrejDialog.getContentPane().add(deleteMembreHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        deleteMembreSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        deleteMembrejDialog.getContentPane().add(deleteMembreSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        deleteMembreMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        deleteMembre_canceljButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        deleteMembre_canceljButton.setText("Annuler");
+        deleteMembre_canceljButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteMember_submitjButtonActionPerformed(evt);
+                deleteMembre_canceljButtonActionPerformed(evt);
             }
         });
-        deleteMemberMainjPanel.add(deleteMember_submitjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 50, 100, 30));
+        deleteMembreMainjPanel.add(deleteMembre_canceljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 50, 100, 30));
 
-        deleteMemberjDialog.getContentPane().add(deleteMemberMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 130));
+        deleteMembre_submitjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        deleteMembre_submitjButton.setText("Supprimer");
+        deleteMembre_submitjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMembre_submitjButtonActionPerformed(evt);
+            }
+        });
+        deleteMembreMainjPanel.add(deleteMembre_submitjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 50, 100, 30));
 
-        deleteMemberjDialog.setLocationRelativeTo(null);
+        deleteMembrejDialog.getContentPane().add(deleteMembreMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 130));
+
+        deleteMembrejDialog.setLocationRelativeTo(null);
+        deleteMembrejDialog.pack();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aeroclub - Menu");
@@ -357,13 +1271,23 @@ public class menuAeroclub extends javax.swing.JFrame {
         jButton5.setText("Abonnements");
         menujPanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 400, 100));
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton6.setText("Avions");
-        menujPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, 400, 100));
+        getAvionsjButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getAvionsjButton.setText("Avions");
+        getAvionsjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getAvionsjButtonActionPerformed(evt);
+            }
+        });
+        menujPanel.add(getAvionsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, 400, 100));
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton7.setText("Instructeurs");
-        menujPanel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 400, 100));
+        getInstructeursjButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getInstructeursjButton.setText("Instructeurs");
+        getInstructeursjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getInstructeursjButtonActionPerformed(evt);
+            }
+        });
+        menujPanel.add(getInstructeursjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 400, 100));
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton8.setText("Catégories");
@@ -385,43 +1309,195 @@ public class menuAeroclub extends javax.swing.JFrame {
         mainjLayeredPane.add(menujPanel);
         menujPanel.setBounds(0, 0, 1440, 700);
 
+        instructeursjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        openModifyInstructeurjPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openModifyInstructeurjPaneljButton.setText("Modifier");
+        openModifyInstructeurjPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openModifyInstructeurjPaneljButtonActionPerformed(evt);
+            }
+        });
+        instructeursjPanel.add(openModifyInstructeurjPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
+
+        openShowInstructeurjPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openShowInstructeurjPaneljButton.setText("Afficher");
+        openShowInstructeurjPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openShowInstructeurjPaneljButtonActionPerformed(evt);
+            }
+        });
+        instructeursjPanel.add(openShowInstructeurjPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+
+        openAddInstructeurjPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddInstructeurjPaneljButton.setText("Ajouter");
+        openAddInstructeurjPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openAddInstructeurjPaneljButtonActionPerformed(evt);
+            }
+        });
+        instructeursjPanel.add(openAddInstructeurjPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+
+        openDeleteInstructeurjPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteInstructeurjPaneljButton.setText("Supprimer");
+        openDeleteInstructeurjPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openDeleteInstructeurjPaneljButtonActionPerformed(evt);
+            }
+        });
+        instructeursjPanel.add(openDeleteInstructeurjPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+
+        instructeursjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        instructeursjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero", "Nom", "Prénom"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        instructeursjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        instructeursjTable.getTableHeader().setReorderingAllowed(false);
+        instructeursjScrollPane.setViewportView(instructeursjTable);
+        if (instructeursjTable.getColumnModel().getColumnCount() > 0) {
+            instructeursjTable.getColumnModel().getColumn(0).setResizable(false);
+            instructeursjTable.getColumnModel().getColumn(1).setResizable(false);
+            instructeursjTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        instructeursjPanel.add(instructeursjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
+
+        mainjLayeredPane.add(instructeursjPanel);
+        instructeursjPanel.setBounds(0, 0, 1440, 700);
+
+        avionsjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        openModifyAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openModifyAvionjButton.setText("Modifier");
+        openModifyAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openModifyAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openModifyAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
+
+        openShowAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openShowAvionjButton.setText("Afficher");
+        openShowAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openShowAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openShowAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+
+        openAddAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddAvionjButton.setText("Ajouter");
+        openAddAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openAddAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openAddAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+
+        openDeleteAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteAvionjButton.setText("Supprimer");
+        openDeleteAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openDeleteAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openDeleteAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+
+        avionsjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        avionsjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero", "Type avion", "Immatriculation"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        avionsjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        avionsjTable.getTableHeader().setReorderingAllowed(false);
+        avionsjScrollPane.setViewportView(avionsjTable);
+        if (avionsjTable.getColumnModel().getColumnCount() > 0) {
+            avionsjTable.getColumnModel().getColumn(0).setResizable(false);
+            avionsjTable.getColumnModel().getColumn(1).setResizable(false);
+            avionsjTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        avionsjPanel.add(avionsjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
+
+        mainjLayeredPane.add(avionsjPanel);
+        avionsjPanel.setBounds(0, 0, 1440, 700);
+
         membresjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        openModifyMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openModifyMemberjButton.setText("Modifier");
-        openModifyMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        openModifyMembrejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openModifyMembrejButton.setText("Modifier");
+        openModifyMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openModifyMemberjButtonActionPerformed(evt);
+                openModifyMembrejButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(openModifyMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
+        membresjPanel.add(openModifyMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
 
-        openShowMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openShowMemberjButton.setText("Afficher");
-        openShowMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        openShowMembrejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openShowMembrejButton.setText("Afficher");
+        openShowMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openShowMemberjButtonActionPerformed(evt);
+                openShowMembrejButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(openShowMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+        membresjPanel.add(openShowMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
 
-        openAddMemberjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openAddMemberjButton.setText("Ajouter");
-        openAddMemberjButton.addActionListener(new java.awt.event.ActionListener() {
+        openAddMembrejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddMembrejButton.setText("Ajouter");
+        openAddMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openAddMemberjButtonActionPerformed(evt);
+                openAddMembrejButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(openAddMemberjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+        membresjPanel.add(openAddMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
 
-        openDeleteMember.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openDeleteMember.setText("Supprimer");
-        openDeleteMember.addActionListener(new java.awt.event.ActionListener() {
+        openDeleteMembrejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteMembrejButton.setText("Supprimer");
+        openDeleteMembrejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openDeleteMemberActionPerformed(evt);
+                openDeleteMembrejButtonActionPerformed(evt);
             }
         });
-        membresjPanel.add(openDeleteMember, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+        membresjPanel.add(openDeleteMembrejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
 
         membresjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         membresjTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -429,11 +1505,11 @@ public class menuAeroclub extends javax.swing.JFrame {
 
             },
             new String [] {
-                "num_membre", "login", "password"
+                "Numero", "Nom", "Prenom"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -456,10 +1532,86 @@ public class menuAeroclub extends javax.swing.JFrame {
             membresjTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        membresjPanel.add(membresjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1410, 630));
+        membresjPanel.add(membresjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
 
         mainjLayeredPane.add(membresjPanel);
-        membresjPanel.setBounds(0, 0, 1420, 680);
+        membresjPanel.setBounds(0, 0, 1440, 700);
+
+        categoriesjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        openModifyCategoriejPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openModifyCategoriejPaneljButton.setText("Modifier");
+        openModifyCategoriejPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openModifyCategoriejPaneljButtonActionPerformed(evt);
+            }
+        });
+        categoriesjPanel.add(openModifyCategoriejPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
+
+        openShowCategoriejPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openShowCategoriejPaneljButton.setText("Afficher");
+        openShowCategoriejPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openShowCategoriejPaneljButtonActionPerformed(evt);
+            }
+        });
+        categoriesjPanel.add(openShowCategoriejPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+
+        openAddCategoriejPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddCategoriejPaneljButton.setText("Ajouter");
+        openAddCategoriejPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openAddCategoriejPaneljButtonActionPerformed(evt);
+            }
+        });
+        categoriesjPanel.add(openAddCategoriejPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+
+        openDeleteCategoriejPaneljButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteCategoriejPaneljButton.setText("Supprimer");
+        openDeleteCategoriejPaneljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openDeleteCategoriejPaneljButtonActionPerformed(evt);
+            }
+        });
+        categoriesjPanel.add(openDeleteCategoriejPaneljButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+
+        categoriesjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        categoriesjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero", "Nom", "Prénom"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        categoriesjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        categoriesjTable.getTableHeader().setReorderingAllowed(false);
+        categoriesjScrollPane.setViewportView(categoriesjTable);
+        if (categoriesjTable.getColumnModel().getColumnCount() > 0) {
+            categoriesjTable.getColumnModel().getColumn(0).setResizable(false);
+            categoriesjTable.getColumnModel().getColumn(1).setResizable(false);
+            categoriesjTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        categoriesjPanel.add(categoriesjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
+
+        mainjLayeredPane.add(categoriesjPanel);
+        categoriesjPanel.setBounds(0, 0, 1440, 700);
 
         getContentPane().add(mainjLayeredPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1440, 700));
         switchPanels(menujPanel);
@@ -472,45 +1624,136 @@ public class menuAeroclub extends javax.swing.JFrame {
         switchPanels(menujPanel);
     }//GEN-LAST:event_backToMenujButtonActionPerformed
 
-    private void openAddMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddMemberjButtonActionPerformed
-        addMember_num_membrejTextField.setText("");
-        addMember_loginjTextField.setText("");
-        addMember_passwordjPasswordField.setText("");
-        addMemberjDialog.setVisible(true);
-    }//GEN-LAST:event_openAddMemberjButtonActionPerformed
+    private void openAddMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddMembrejButtonActionPerformed
+        addMembre_loginjTextField.setText("");
+        addMembre_passwordjPasswordField.setText("");
+        addMembre_nomjTextField.setText("");
+        addMembre_prenomjTextField.setText("");
+        addMembre_adressejTextField.setText("");
+        addMembre_code_postaljTextField.setText("");
+        addMembre_villejTextField.setText("");
+        addMembre_num_civiljTextField.setText("");
+        addMembre_teljTextField.setText("");
+        addMembre_portablejTextField.setText("");
+        addMembre_emailjTextField.setText("");
+        addMembre_commentairejTextField.setText("");
+        addMembre_date_vmjTextField.setText("");
+        addMembre_validite_vmjTextField.setText("");
+        addMembre_date_seqjTextField.setText("");
+        addMembre_validite_seqjTextField.setText("");
+        addMembre_num_badgejTextField.setText("");
+        addMembre_num_qualifjTextField.setText("");
+        addMembre_professionjTextField.setText("");
+        addMembre_date_naissancejTextField.setText("");
+        addMembre_lieu_naissancejTextField.setText("");
+        addMembre_carte_federalejTextField.setText("");
+        addMembre_date_attestationjTextField.setText("");
+        addMembre_date_theorique_bbjTextField.setText("");
+        addMembre_date_theorique_pplajTextField.setText("");
+        addMembre_date_bbjTextField.setText("");
+        addMembre_date_pplajTextField.setText("");
+        addMembre_numero_bbjTextField.setText("");
+        addMembre_numera_pplajTextField.setText("");
+        addMembre_date_entreejTextField.setText("");
+        addMembre_membre_actifjCheckBox.setSelected(false);
+        addMembre_membre_inscritjCheckBox.setSelected(false);
+        addMembrejDialog.setVisible(true);
+    }//GEN-LAST:event_openAddMembrejButtonActionPerformed
 
     private void getMembresjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getMembresjButtonActionPerformed
         switchPanels(membresjPanel);
         getMembersTable();
     }//GEN-LAST:event_getMembresjButtonActionPerformed
 
-    private void openDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteMemberActionPerformed
-        deleteMemberjDialog.setVisible(true);
-    }//GEN-LAST:event_openDeleteMemberActionPerformed
+    private void openDeleteMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteMembrejButtonActionPerformed
+        deleteMembrejDialog.setVisible(true);
+    }//GEN-LAST:event_openDeleteMembrejButtonActionPerformed
 
-    private void openShowMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowMemberjButtonActionPerformed
-        getMember();
-    }//GEN-LAST:event_openShowMemberjButtonActionPerformed
+    private void openShowMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowMembrejButtonActionPerformed
+        openShowMember();
+    }//GEN-LAST:event_openShowMembrejButtonActionPerformed
 
-    private void openModifyMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openModifyMemberjButtonActionPerformed
+    private void openModifyMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openModifyMembrejButtonActionPerformed
         openModifyMember();
-    }//GEN-LAST:event_openModifyMemberjButtonActionPerformed
+    }//GEN-LAST:event_openModifyMembrejButtonActionPerformed
 
-    private void addMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberjButtonActionPerformed
+    private void addMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMembrejButtonActionPerformed
         addMember();
-    }//GEN-LAST:event_addMemberjButtonActionPerformed
+    }//GEN-LAST:event_addMembrejButtonActionPerformed
 
-    private void modifyMemberjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyMemberjButtonActionPerformed
+    private void modifyMembrejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyMembrejButtonActionPerformed
         modifyMember();
-    }//GEN-LAST:event_modifyMemberjButtonActionPerformed
+    }//GEN-LAST:event_modifyMembrejButtonActionPerformed
 
-    private void deleteMember_canceljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMember_canceljButtonActionPerformed
-        deleteMemberjDialog.dispose();
-    }//GEN-LAST:event_deleteMember_canceljButtonActionPerformed
+    private void deleteMembre_canceljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMembre_canceljButtonActionPerformed
+        deleteMembrejDialog.dispose();
+    }//GEN-LAST:event_deleteMembre_canceljButtonActionPerformed
 
-    private void deleteMember_submitjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMember_submitjButtonActionPerformed
+    private void deleteMembre_submitjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMembre_submitjButtonActionPerformed
         deleteMember();
-    }//GEN-LAST:event_deleteMember_submitjButtonActionPerformed
+    }//GEN-LAST:event_deleteMembre_submitjButtonActionPerformed
+
+    private void addMembre_membre_actifjCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMembre_membre_actifjCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addMembre_membre_actifjCheckBoxActionPerformed
+
+    private void openModifyAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openModifyAvionjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openModifyAvionjButtonActionPerformed
+
+    private void openShowAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowAvionjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openShowAvionjButtonActionPerformed
+
+    private void openAddAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddAvionjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openAddAvionjButtonActionPerformed
+
+    private void openDeleteAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteAvionjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openDeleteAvionjButtonActionPerformed
+
+    private void getAvionsjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getAvionsjButtonActionPerformed
+        switchPanels(avionsjPanel);
+        getAvionsTable();
+    }//GEN-LAST:event_getAvionsjButtonActionPerformed
+
+    private void openModifyInstructeurjPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openModifyInstructeurjPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openModifyInstructeurjPaneljButtonActionPerformed
+
+    private void openShowInstructeurjPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowInstructeurjPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openShowInstructeurjPaneljButtonActionPerformed
+
+    private void openAddInstructeurjPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddInstructeurjPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openAddInstructeurjPaneljButtonActionPerformed
+
+    private void openDeleteInstructeurjPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteInstructeurjPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openDeleteInstructeurjPaneljButtonActionPerformed
+
+    private void getInstructeursjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getInstructeursjButtonActionPerformed
+        switchPanels(instructeursjPanel);
+        getInstructeursTable();
+    }//GEN-LAST:event_getInstructeursjButtonActionPerformed
+
+    private void openModifyCategoriejPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openModifyCategoriejPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openModifyCategoriejPaneljButtonActionPerformed
+
+    private void openShowCategoriejPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowCategoriejPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openShowCategoriejPaneljButtonActionPerformed
+
+    private void openAddCategoriejPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddCategoriejPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openAddCategoriejPaneljButtonActionPerformed
+
+    private void openDeleteCategoriejPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteCategoriejPaneljButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openDeleteCategoriejPaneljButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -564,7 +1807,55 @@ public class menuAeroclub extends javax.swing.JFrame {
         
     }
     
-    public void getMember() {
+    public void getMembersTable() {
+        
+        Connection connection = null;
+        DefaultTableModel tbmodel = (DefaultTableModel) membresjTable.getModel();
+        tbmodel.setRowCount(0);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.LEFT);
+
+        for (int i = 0; i < membresjTable.getColumnCount(); i++) {
+            TableColumn column = membresjTable.getColumnModel().getColumn(i);
+            column.setCellRenderer(centerRenderer);
+        }
+        
+        try {
+            
+            database db = new database();
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
+            
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM membres ORDER BY num_membre ASC;");
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()) {
+                String num_membre = rs.getString("num_membre");
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+
+                String data[] = {num_membre, nom, prenom};
+                tbmodel.addRow(data);
+            }
+            
+            
+            
+        } catch(ClassNotFoundException | SQLException e) {
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    public void openShowMember() {
         
         int selectedRow = membresjTable.getSelectedRow();
         
@@ -572,25 +1863,89 @@ public class menuAeroclub extends javax.swing.JFrame {
             
             String num_membre = String.valueOf(membresjTable.getValueAt(selectedRow, 0));
 
-            dataMember member = new dataMember();
+            Membre member = new Membre();
             member.getMember(Integer.parseInt(num_membre));
             
-            showMember_num_membreDatajLabel.setText(String.valueOf(member.num_membre));
-            showMember_loginDatajLabel.setText(member.login);
-            showMember_passwordDatajLabel.setText(member.password);
+            showMembre_num_membreDatajLabel.setText(String.valueOf(member.num_membre));
+            showMembre_nomDatajLabel.setText(member.nom);
+            showMembre_prenomDatajLabel.setText(member.prenom);
+            showMembre_adresseDatajLabel.setText(member.adresse);
+            showMembre_code_postalDatajLabel.setText(member.code_postal);
+            showMembre_villeDatajLabel.setText(member.ville);
+            showMembre_num_civilDatajLabel.setText(String.valueOf(member.num_civil));
+            showMembre_telDatajLabel.setText(member.tel);
+            showMembre_portableDatajLabel.setText(member.portable);
+            showMembre_emailDatajLabel.setText(member.email);
+            showMembre_commentaireDatajLabel.setText(member.commentaire);
+            showMembre_date_vmDatajLabel.setText(String.valueOf(member.date_vm));
+            showMembre_validite_vmDatajLabel.setText(String.valueOf(member.validite_vm));
+            showMembre_date_seqDatajLabel.setText(String.valueOf(member.date_seq));
+            showMembre_validite_seqDatajLabel.setText(String.valueOf(member.validite_seq));
+            showMembre_num_badgeDatajLabel.setText(member.num_badge);
+            showMembre_num_qualifDatajLabel.setText(String.valueOf(member.num_qualif));
+            showMembre_date_naissanceDatajLabel.setText(String.valueOf(member.date_naissance));
+            showMembre_lieu_naissanceDatajLabel.setText(member.lieu_naissance);
+            showMembre_carte_federaleDatajLabel.setText(member.carte_federale);
+            showMembre_date_attestationDatajLabel.setText(String.valueOf(member.date_attestation));
+            showMembre_date_theorique_bbDatajLabel.setText(String.valueOf(member.date_theorique_bb));
+            showMembre_date_theorique_pplaDatajLabel.setText(String.valueOf(member.date_theorique_ppla));
+            showMembre_date_bbDatajLabel.setText(String.valueOf(member.date_bb));
+            showMembre_date_pplaDatajLabel.setText(String.valueOf(member.date_ppla));
+            showMembre_numero_bbDatajLabel.setText(member.numero_bb);
+            showMembre_numera_pplaDatajLabel.setText(member.numera_ppla);
+            showMembre_date_entreeDatajLabel.setText(String.valueOf(member.date_entree));
+            showMembre_membre_actifDatajLabel.setText(String.valueOf(member.membre_actif));
+            showMembre_membre_inscritDatajLabel.setText(String.valueOf(member.membre_inscrit));
+            showMembre_loginDatajLabel.setText(member.login);
 
-            showMemberjDialog.setVisible(true);
+            showMembrejDialog.setVisible(true);
             
-        
         }
         
     }
     
     public void addMember() {
         
-        new dataMember().addMember(Integer.parseInt(addMember_num_membrejTextField.getText()), addMember_loginjTextField.getText(), addMember_passwordjPasswordField.getText());
+        //new dataMember().addMember(Integer.parseInt(addMember_num_membrejTextField.getText()), addMember_loginjTextField.getText(), addMember_passwordjPasswordField.getText());
         
-        addMemberjDialog.dispose();
+        Membre member = new Membre();
+        
+        member.nom = addMembre_nomjTextField.getText();
+        member.prenom = addMembre_prenomjTextField.getText();
+        member.adresse = addMembre_adressejTextField.getText();
+        member.code_postal = addMembre_code_postaljTextField.getText();
+        member.ville = addMembre_villejTextField.getText();
+        member.num_civil = Integer.parseInt(addMembre_num_civiljTextField.getText());
+        member.tel = addMembre_teljTextField.getText();
+        member.portable = addMembre_portablejTextField.getText();
+        member.email = addMembre_emailjTextField.getText();
+        member.commentaire = addMembre_commentairejTextField.getText();
+        member.date_vm = java.sql.Date.valueOf(addMembre_date_vmjTextField.getText());
+        member.validite_vm = java.sql.Date.valueOf(addMembre_validite_vmjTextField.getText());
+        member.date_seq = java.sql.Date.valueOf(addMembre_date_seqjTextField.getText());
+        member.validite_seq = java.sql.Date.valueOf(addMembre_validite_seqjTextField.getText());
+        member.num_badge = addMembre_num_badgejTextField.getText();
+        member.num_qualif = Integer.parseInt(addMembre_num_qualifjTextField.getText());
+        member.profession = addMembre_professionjTextField.getText();
+        member.date_naissance = java.sql.Date.valueOf(addMembre_date_naissancejTextField.getText());
+        member.lieu_naissance = addMembre_lieu_naissancejTextField.getText();
+        member.carte_federale = addMembre_carte_federalejTextField.getText();
+        member.date_attestation = java.sql.Date.valueOf(addMembre_date_attestationjTextField.getText());
+        member.date_theorique_bb = java.sql.Date.valueOf(addMembre_date_theorique_bbjTextField.getText());
+        member.date_theorique_ppla = java.sql.Date.valueOf(addMembre_date_theorique_pplajTextField.getText());
+        member.date_bb = java.sql.Date.valueOf(addMembre_date_bbjTextField.getText());
+        member.date_ppla = java.sql.Date.valueOf(addMembre_date_pplajTextField.getText());
+        member.numero_bb = addMembre_numero_bbjTextField.getText();
+        member.numera_ppla = addMembre_numera_pplajTextField.getText();
+        member.date_entree = java.sql.Date.valueOf(addMembre_date_entreejTextField.getText());
+        member.membre_actif = addMembre_membre_actifjCheckBox.isSelected() ? 1 : 0;
+        member.membre_inscrit = addMembre_membre_inscritjCheckBox.isSelected() ? 1 : 0;
+        member.login = addMembre_loginjTextField.getText();
+        member.password = addMembre_passwordjPasswordField.getText();
+        
+        member.addMember();
+        
+        addMembrejDialog.dispose();
         
         getMembersTable();
         
@@ -604,14 +1959,41 @@ public class menuAeroclub extends javax.swing.JFrame {
             
             String num_membre = String.valueOf(membresjTable.getValueAt(selectedRow, 0));
 
-            dataMember member = new dataMember();
+            Membre member = new Membre();
             member.getMember(Integer.parseInt(num_membre));
             
-            modifyMember_num_membrejTextField.setText(String.valueOf(member.num_membre));
-            modifyMember_loginjTextField.setText(member.login);
-            modifyMember_passwordjPasswordField.setText(member.password);
+            modifyMembre_loginjTextField.setText(member.login);
+            modifyMembre_nomjTextField.setText(member.nom);
+            modifyMembre_prenomjTextField.setText(member.prenom);
+            modifyMembre_adressejTextField.setText(member.adresse);
+            modifyMembre_code_postaljTextField.setText(member.code_postal);
+            modifyMembre_villejTextField.setText(member.ville);
+            modifyMembre_num_civiljTextField.setText(String.valueOf(member.num_civil));
+            modifyMembre_teljTextField.setText(member.tel);
+            modifyMembre_portablejTextField.setText(member.portable);
+            modifyMembre_emailjTextField.setText(member.email);
+            modifyMembre_commentairejTextField.setText(member.commentaire);
+            modifyMembre_date_vmjTextField.setText(String.valueOf(member.date_vm));
+            modifyMembre_validite_vmjTextField.setText(String.valueOf(member.validite_vm));
+            modifyMembre_date_seqjTextField.setText(String.valueOf(member.date_seq));
+            modifyMembre_validite_seqjTextField.setText(String.valueOf(member.validite_seq));
+            modifyMembre_num_badgejTextField.setText(member.num_badge);
+            modifyMembre_num_qualifjTextField.setText(String.valueOf(member.num_qualif));
+            modifyMembre_date_naissancejTextField.setText(String.valueOf(member.date_naissance));
+            modifyMembre_lieu_naissancejTextField.setText(member.lieu_naissance);
+            modifyMembre_carte_federalejTextField.setText(member.carte_federale);
+            modifyMembre_date_attestationjTextField.setText(String.valueOf(member.date_attestation));
+            modifyMembre_date_theorique_bbjTextField.setText(String.valueOf(member.date_theorique_bb));
+            modifyMembre_date_theorique_pplajTextField.setText(String.valueOf(member.date_theorique_ppla));
+            modifyMembre_date_bbjTextField.setText(String.valueOf(member.date_bb));
+            modifyMembre_date_pplajTextField.setText(String.valueOf(member.date_ppla));
+            modifyMembre_numero_bbjTextField.setText(member.numero_bb);
+            modifyMembre_numera_pplajTextField.setText(member.numera_ppla);
+            modifyMembre_date_entreejTextField.setText(String.valueOf(member.date_entree));
+            modifyMembre_membre_actifjCheckBox.setSelected((member.membre_actif == 1) ? true : false);
+            modifyMembre_membre_inscritjCheckBox.setSelected((member.membre_inscrit == 1) ? true : false);
 
-            modifyMemberjDialog.setVisible(true);
+            modifyMembrejDialog.setVisible(true);
         
         }
         
@@ -619,9 +2001,9 @@ public class menuAeroclub extends javax.swing.JFrame {
     
     public void modifyMember() {
         
-        new dataMember().modifyMember(Integer.parseInt(modifyMember_num_membrejTextField.getText()), modifyMember_loginjTextField.getText(), modifyMember_passwordjPasswordField.getText());
+        new Membre().modifyMember(Integer.parseInt(modifyMembre_loginjTextField.getText()), modifyMembre_nomjTextField.getText(), modifyMembre_passwordjPasswordField.getText());
         
-        modifyMemberjDialog.dispose();
+        modifyMembrejDialog.dispose();
         
         getMembersTable();
         
@@ -633,19 +2015,27 @@ public class menuAeroclub extends javax.swing.JFrame {
         
         int num_membre = Integer.parseInt((String) membresjTable.getValueAt(selectedRow, 0));
         
-        new dataMember().deleteMember(num_membre);
+        new Membre().deleteMember(num_membre);
         
-        deleteMemberjDialog.dispose();
+        deleteMembrejDialog.dispose();
         
         getMembersTable();
         
     }
     
-    public void getMembersTable() {
+    public void getAvionsTable() {
         
         Connection connection = null;
-        DefaultTableModel tbmodel = (DefaultTableModel) membresjTable.getModel();
+        DefaultTableModel tbmodel = (DefaultTableModel) avionsjTable.getModel();
         tbmodel.setRowCount(0);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.LEFT);
+
+        for (int i = 0; i < avionsjTable.getColumnCount(); i++) {
+            TableColumn column = avionsjTable.getColumnModel().getColumn(i);
+            column.setCellRenderer(centerRenderer);
+        }
         
         try {
             
@@ -653,17 +2043,67 @@ public class menuAeroclub extends javax.swing.JFrame {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM membres ORDER BY num_membre ASC;");
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM avions ORDER BY num_avion ASC;");
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()) {
-                String num_membre = rs.getString("num_membre");
-                String login = rs.getString("login");
-                String password = rs.getString("password");
+                String num_avion = rs.getString("num_avion");
+                String type_avion = rs.getString("type_avion");
+                String immatriculation = rs.getString("immatriculation");
 
-                String data[] = {num_membre, login, password};
+                String data[] = {num_avion, type_avion, immatriculation};
                 tbmodel.addRow(data);
             }
+            
+            
+            
+        } catch(ClassNotFoundException | SQLException e) {
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    public void getInstructeursTable() {
+        
+        Connection connection = null;
+        DefaultTableModel tbmodel = (DefaultTableModel) instructeursjTable.getModel();
+        tbmodel.setRowCount(0);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.LEFT);
+
+        for (int i = 0; i < instructeursjTable.getColumnCount(); i++) {
+            TableColumn column = instructeursjTable.getColumnModel().getColumn(i);
+            column.setCellRenderer(centerRenderer);
+        }
+        
+        try {
+            
+            database db = new database();
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
+            
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM instructeurs ORDER BY num_instructeur ASC;");
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()) {
+                String num_instructeur = rs.getString("num_instructeur");
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+
+                String data[] = {num_instructeur, nom, prenom};
+                tbmodel.addRow(data);
+            }
+            
+            
             
         } catch(ClassNotFoundException | SQLException e) {
             System.err.println(e.getClass().getName()+": "+e.getMessage());
@@ -680,33 +2120,100 @@ public class menuAeroclub extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addMemberHeadjPanel;
-    private javax.swing.JPanel addMemberMainjPanel;
-    private javax.swing.JPanel addMemberSeparatorjPanel;
-    private javax.swing.JLabel addMemberTitlejLabel;
-    private javax.swing.JLabel addMember_loginjLabel;
-    private javax.swing.JTextField addMember_loginjTextField;
-    private javax.swing.JLabel addMember_num_membrejLabel;
-    private javax.swing.JTextField addMember_num_membrejTextField;
-    private javax.swing.JLabel addMember_passwordjLabel;
-    private javax.swing.JPasswordField addMember_passwordjPasswordField;
-    private javax.swing.JButton addMemberjButton;
-    private javax.swing.JDialog addMemberjDialog;
+    private javax.swing.JPanel addMembreHeadjPanel;
+    private javax.swing.JPanel addMembreMainjPanel;
+    private javax.swing.JPanel addMembreSeparatorjPanel;
+    private javax.swing.JLabel addMembreTitlejLabel;
+    private javax.swing.JLabel addMembre_adressejLabel;
+    private javax.swing.JTextField addMembre_adressejTextField;
+    private javax.swing.JLabel addMembre_carte_federalejLabel;
+    private javax.swing.JTextField addMembre_carte_federalejTextField;
+    private javax.swing.JLabel addMembre_code_postaljLabel;
+    private javax.swing.JTextField addMembre_code_postaljTextField;
+    private javax.swing.JLabel addMembre_commentairejLabel;
+    private javax.swing.JTextField addMembre_commentairejTextField;
+    private javax.swing.JLabel addMembre_date_attestationjLabel;
+    private javax.swing.JTextField addMembre_date_attestationjTextField;
+    private javax.swing.JLabel addMembre_date_bbjLabel;
+    private javax.swing.JTextField addMembre_date_bbjTextField;
+    private javax.swing.JLabel addMembre_date_entreejLabel;
+    private javax.swing.JTextField addMembre_date_entreejTextField;
+    private javax.swing.JLabel addMembre_date_naissancejLabel;
+    private javax.swing.JTextField addMembre_date_naissancejTextField;
+    private javax.swing.JLabel addMembre_date_pplajLabel;
+    private javax.swing.JTextField addMembre_date_pplajTextField;
+    private javax.swing.JLabel addMembre_date_seqjLabel;
+    private javax.swing.JTextField addMembre_date_seqjTextField;
+    private javax.swing.JLabel addMembre_date_theorique_bbjLabel;
+    private javax.swing.JTextField addMembre_date_theorique_bbjTextField;
+    private javax.swing.JLabel addMembre_date_theorique_pplajLabel;
+    private javax.swing.JTextField addMembre_date_theorique_pplajTextField;
+    private javax.swing.JLabel addMembre_date_vmjLabel;
+    private javax.swing.JTextField addMembre_date_vmjTextField;
+    private javax.swing.JLabel addMembre_emailjLabel;
+    private javax.swing.JTextField addMembre_emailjTextField;
+    private javax.swing.JLabel addMembre_lieu_naissancejLabel;
+    private javax.swing.JTextField addMembre_lieu_naissancejTextField;
+    private javax.swing.JLabel addMembre_loginjLabel;
+    private javax.swing.JTextField addMembre_loginjTextField;
+    private javax.swing.JCheckBox addMembre_membre_actifjCheckBox;
+    private javax.swing.JLabel addMembre_membre_actifjLabel;
+    private javax.swing.JCheckBox addMembre_membre_inscritjCheckBox;
+    private javax.swing.JLabel addMembre_membre_inscritjLabel;
+    private javax.swing.JLabel addMembre_nomjLabel1;
+    private javax.swing.JTextField addMembre_nomjTextField;
+    private javax.swing.JLabel addMembre_num_badgejLabel;
+    private javax.swing.JTextField addMembre_num_badgejTextField;
+    private javax.swing.JLabel addMembre_num_civiljLabel;
+    private javax.swing.JTextField addMembre_num_civiljTextField;
+    private javax.swing.JLabel addMembre_num_qualifjLabel;
+    private javax.swing.JTextField addMembre_num_qualifjTextField;
+    private javax.swing.JLabel addMembre_numera_pplajLabel;
+    private javax.swing.JTextField addMembre_numera_pplajTextField;
+    private javax.swing.JLabel addMembre_numero_bbjLabel;
+    private javax.swing.JTextField addMembre_numero_bbjTextField;
+    private javax.swing.JLabel addMembre_passwordjLabel;
+    private javax.swing.JPasswordField addMembre_passwordjPasswordField;
+    private javax.swing.JLabel addMembre_portablejLabel;
+    private javax.swing.JTextField addMembre_portablejTextField;
+    private javax.swing.JLabel addMembre_prenomjLabel;
+    private javax.swing.JTextField addMembre_prenomjTextField;
+    private javax.swing.JLabel addMembre_professionjLabel;
+    private javax.swing.JTextField addMembre_professionjTextField;
+    private javax.swing.JLabel addMembre_teljLabel;
+    private javax.swing.JTextField addMembre_teljTextField;
+    private javax.swing.JLabel addMembre_validite_seqjLabel;
+    private javax.swing.JTextField addMembre_validite_seqjTextField;
+    private javax.swing.JLabel addMembre_validite_vmjLabel;
+    private javax.swing.JTextField addMembre_validite_vmjTextField;
+    private javax.swing.JLabel addMembre_villejLabel;
+    private javax.swing.JTextField addMembre_villejTextField;
+    private javax.swing.JButton addMembrejButton;
+    private javax.swing.JDialog addMembrejDialog;
+    private javax.swing.JPanel avionsjPanel;
+    private javax.swing.JScrollPane avionsjScrollPane;
+    private javax.swing.JTable avionsjTable;
     private javax.swing.JButton backToMenujButton;
-    private javax.swing.JPanel deleteMemberHeadjPanel;
-    private javax.swing.JPanel deleteMemberMainjPanel;
-    private javax.swing.JPanel deleteMemberSeparatorjPanel;
-    private javax.swing.JLabel deleteMemberTitlejLabel;
-    private javax.swing.JButton deleteMember_canceljButton;
-    private javax.swing.JButton deleteMember_submitjButton;
-    private javax.swing.JDialog deleteMemberjDialog;
+    private javax.swing.JPanel categoriesjPanel;
+    private javax.swing.JScrollPane categoriesjScrollPane;
+    private javax.swing.JTable categoriesjTable;
+    private javax.swing.JPanel deleteMembreHeadjPanel;
+    private javax.swing.JPanel deleteMembreMainjPanel;
+    private javax.swing.JPanel deleteMembreSeparatorjPanel;
+    private javax.swing.JLabel deleteMembreTitlejLabel;
+    private javax.swing.JButton deleteMembre_canceljButton;
+    private javax.swing.JButton deleteMembre_submitjButton;
+    private javax.swing.JDialog deleteMembrejDialog;
+    private javax.swing.JButton getAvionsjButton;
+    private javax.swing.JButton getInstructeursjButton;
     private javax.swing.JButton getMembresjButton;
     private javax.swing.JPanel headjPanel;
+    private javax.swing.JPanel instructeursjPanel;
+    private javax.swing.JScrollPane instructeursjScrollPane;
+    private javax.swing.JTable instructeursjTable;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLayeredPane mainjLayeredPane;
@@ -714,34 +2221,162 @@ public class menuAeroclub extends javax.swing.JFrame {
     private javax.swing.JScrollPane membresjScrollPane;
     private javax.swing.JTable membresjTable;
     private javax.swing.JPanel menujPanel;
-    private javax.swing.JPanel modifyMemberHeadjPanel;
-    private javax.swing.JPanel modifyMemberMainjPanel;
-    private javax.swing.JPanel modifyMemberSeparatorjPanel;
-    private javax.swing.JLabel modifyMemberTitlejLabel;
-    private javax.swing.JLabel modifyMember_loginjLabel;
-    private javax.swing.JTextField modifyMember_loginjTextField;
-    private javax.swing.JLabel modifyMember_num_membrejLabel;
-    private javax.swing.JTextField modifyMember_num_membrejTextField;
-    private javax.swing.JLabel modifyMember_passwordjLabel;
-    private javax.swing.JPasswordField modifyMember_passwordjPasswordField;
-    private javax.swing.JButton modifyMemberjButton;
-    private javax.swing.JDialog modifyMemberjDialog;
-    private javax.swing.JButton openAddMemberjButton;
-    private javax.swing.JButton openDeleteMember;
-    private javax.swing.JButton openModifyMemberjButton;
-    private javax.swing.JButton openShowMemberjButton;
+    private javax.swing.JPanel modifyMembreHeadjPanel;
+    private javax.swing.JPanel modifyMembreMainjPanel;
+    private javax.swing.JPanel modifyMembreSeparatorjPanel;
+    private javax.swing.JLabel modifyMembreTitlejLabel;
+    private javax.swing.JLabel modifyMembre_adressejLabel;
+    private javax.swing.JTextField modifyMembre_adressejTextField;
+    private javax.swing.JLabel modifyMembre_carte_federalejLabel;
+    private javax.swing.JTextField modifyMembre_carte_federalejTextField;
+    private javax.swing.JLabel modifyMembre_code_postaljLabel;
+    private javax.swing.JTextField modifyMembre_code_postaljTextField;
+    private javax.swing.JLabel modifyMembre_commentairejLabel;
+    private javax.swing.JTextField modifyMembre_commentairejTextField;
+    private javax.swing.JLabel modifyMembre_date_attestationjLabel;
+    private javax.swing.JTextField modifyMembre_date_attestationjTextField;
+    private javax.swing.JLabel modifyMembre_date_bbjLabel;
+    private javax.swing.JTextField modifyMembre_date_bbjTextField;
+    private javax.swing.JLabel modifyMembre_date_entreejLabel;
+    private javax.swing.JTextField modifyMembre_date_entreejTextField;
+    private javax.swing.JLabel modifyMembre_date_naissancejLabel;
+    private javax.swing.JTextField modifyMembre_date_naissancejTextField;
+    private javax.swing.JLabel modifyMembre_date_pplajLabel;
+    private javax.swing.JTextField modifyMembre_date_pplajTextField;
+    private javax.swing.JLabel modifyMembre_date_seqjLabel;
+    private javax.swing.JTextField modifyMembre_date_seqjTextField;
+    private javax.swing.JLabel modifyMembre_date_theorique_bbjLabel;
+    private javax.swing.JTextField modifyMembre_date_theorique_bbjTextField;
+    private javax.swing.JLabel modifyMembre_date_theorique_pplajLabel;
+    private javax.swing.JTextField modifyMembre_date_theorique_pplajTextField;
+    private javax.swing.JLabel modifyMembre_date_vmjLabel;
+    private javax.swing.JTextField modifyMembre_date_vmjTextField;
+    private javax.swing.JLabel modifyMembre_emailjLabel;
+    private javax.swing.JTextField modifyMembre_emailjTextField;
+    private javax.swing.JLabel modifyMembre_lieu_naissancejLabel;
+    private javax.swing.JTextField modifyMembre_lieu_naissancejTextField;
+    private javax.swing.JLabel modifyMembre_loginjLabel;
+    private javax.swing.JTextField modifyMembre_loginjTextField;
+    private javax.swing.JCheckBox modifyMembre_membre_actifjCheckBox;
+    private javax.swing.JLabel modifyMembre_membre_actifjLabel;
+    private javax.swing.JCheckBox modifyMembre_membre_inscritjCheckBox;
+    private javax.swing.JLabel modifyMembre_membre_inscritjLabel;
+    private javax.swing.JLabel modifyMembre_nomjLabel;
+    private javax.swing.JTextField modifyMembre_nomjTextField;
+    private javax.swing.JLabel modifyMembre_num_badgejLabel;
+    private javax.swing.JTextField modifyMembre_num_badgejTextField;
+    private javax.swing.JLabel modifyMembre_num_civiljLabel;
+    private javax.swing.JTextField modifyMembre_num_civiljTextField;
+    private javax.swing.JLabel modifyMembre_num_qualifjLabel;
+    private javax.swing.JTextField modifyMembre_num_qualifjTextField;
+    private javax.swing.JLabel modifyMembre_numera_pplajLabel;
+    private javax.swing.JTextField modifyMembre_numera_pplajTextField;
+    private javax.swing.JLabel modifyMembre_numero_bbjLabel;
+    private javax.swing.JTextField modifyMembre_numero_bbjTextField;
+    private javax.swing.JLabel modifyMembre_passwordjLabel;
+    private javax.swing.JPasswordField modifyMembre_passwordjPasswordField;
+    private javax.swing.JLabel modifyMembre_portablejLabel;
+    private javax.swing.JTextField modifyMembre_portablejTextField;
+    private javax.swing.JLabel modifyMembre_prenomjLabel;
+    private javax.swing.JTextField modifyMembre_prenomjTextField;
+    private javax.swing.JLabel modifyMembre_professionjLabel;
+    private javax.swing.JTextField modifyMembre_professionjTextField;
+    private javax.swing.JLabel modifyMembre_teljLabel;
+    private javax.swing.JTextField modifyMembre_teljTextField;
+    private javax.swing.JLabel modifyMembre_validite_seqjLabel;
+    private javax.swing.JTextField modifyMembre_validite_seqjTextField;
+    private javax.swing.JLabel modifyMembre_validite_vmjLabel;
+    private javax.swing.JTextField modifyMembre_validite_vmjTextField;
+    private javax.swing.JLabel modifyMembre_villejLabel;
+    private javax.swing.JTextField modifyMembre_villejTextField;
+    private javax.swing.JButton modifyMembrejButton;
+    private javax.swing.JDialog modifyMembrejDialog;
+    private javax.swing.JButton openAddAvionjButton;
+    private javax.swing.JButton openAddCategoriejPaneljButton;
+    private javax.swing.JButton openAddInstructeurjPaneljButton;
+    private javax.swing.JButton openAddMembrejButton;
+    private javax.swing.JButton openDeleteAvionjButton;
+    private javax.swing.JButton openDeleteCategoriejPaneljButton;
+    private javax.swing.JButton openDeleteInstructeurjPaneljButton;
+    private javax.swing.JButton openDeleteMembrejButton;
+    private javax.swing.JButton openModifyAvionjButton;
+    private javax.swing.JButton openModifyCategoriejPaneljButton;
+    private javax.swing.JButton openModifyInstructeurjPaneljButton;
+    private javax.swing.JButton openModifyMembrejButton;
+    private javax.swing.JButton openShowAvionjButton;
+    private javax.swing.JButton openShowCategoriejPaneljButton;
+    private javax.swing.JButton openShowInstructeurjPaneljButton;
+    private javax.swing.JButton openShowMembrejButton;
     private javax.swing.JPanel separatorjPanel;
-    private javax.swing.JPanel showMemberHeadjPanel;
-    private javax.swing.JPanel showMemberMainjPanel;
-    private javax.swing.JPanel showMemberSeparatorjPanel;
-    private javax.swing.JLabel showMemberTitlejLabel;
-    private javax.swing.JLabel showMember_loginDatajLabel;
-    private javax.swing.JLabel showMember_loginjLabel;
-    private javax.swing.JLabel showMember_num_membreDatajLabel;
-    private javax.swing.JLabel showMember_num_membrejLabel;
-    private javax.swing.JLabel showMember_passwordDatajLabel;
-    private javax.swing.JLabel showMember_passwordjLabel;
-    private javax.swing.JDialog showMemberjDialog;
+    private javax.swing.JPanel showMembreHeadjPanel;
+    private javax.swing.JPanel showMembreMainjPanel;
+    private javax.swing.JPanel showMembreSeparatorjPanel;
+    private javax.swing.JLabel showMembreTitlejLabel;
+    private javax.swing.JLabel showMembre_adresseDatajLabel;
+    private javax.swing.JLabel showMembre_adressejLabel;
+    private javax.swing.JLabel showMembre_carte_federaleDatajLabel;
+    private javax.swing.JLabel showMembre_carte_federalejLabel;
+    private javax.swing.JLabel showMembre_code_postalDatajLabel;
+    private javax.swing.JLabel showMembre_code_postaljLabel;
+    private javax.swing.JLabel showMembre_commentaireDatajLabel;
+    private javax.swing.JLabel showMembre_commentairejLabel;
+    private javax.swing.JLabel showMembre_date_attestationDatajLabel;
+    private javax.swing.JLabel showMembre_date_attestationjLabel;
+    private javax.swing.JLabel showMembre_date_bbDatajLabel;
+    private javax.swing.JLabel showMembre_date_bbjLabel;
+    private javax.swing.JLabel showMembre_date_entreeDatajLabel;
+    private javax.swing.JLabel showMembre_date_entreejLabel;
+    private javax.swing.JLabel showMembre_date_naissanceDatajLabel;
+    private javax.swing.JLabel showMembre_date_naissancejLabel;
+    private javax.swing.JLabel showMembre_date_pplaDatajLabel;
+    private javax.swing.JLabel showMembre_date_pplajLabel;
+    private javax.swing.JLabel showMembre_date_seqDatajLabel;
+    private javax.swing.JLabel showMembre_date_seqjLabel;
+    private javax.swing.JLabel showMembre_date_theorique_bbDatajLabel;
+    private javax.swing.JLabel showMembre_date_theorique_bbjLabel;
+    private javax.swing.JLabel showMembre_date_theorique_pplaDatajLabel;
+    private javax.swing.JLabel showMembre_date_theorique_pplajLabel;
+    private javax.swing.JLabel showMembre_date_vmDatajLabel;
+    private javax.swing.JLabel showMembre_date_vmjLabel;
+    private javax.swing.JLabel showMembre_emailDatajLabel;
+    private javax.swing.JLabel showMembre_emailjLabel;
+    private javax.swing.JLabel showMembre_lieu_naissanceDatajLabel;
+    private javax.swing.JLabel showMembre_lieu_naissancejLabel;
+    private javax.swing.JLabel showMembre_loginDatajLabel;
+    private javax.swing.JLabel showMembre_loginjLabel;
+    private javax.swing.JLabel showMembre_membre_actifDatajLabel;
+    private javax.swing.JLabel showMembre_membre_actifjLabel;
+    private javax.swing.JLabel showMembre_membre_inscritDatajLabel;
+    private javax.swing.JLabel showMembre_membre_inscritjLabel;
+    private javax.swing.JLabel showMembre_nomDatajLabel;
+    private javax.swing.JLabel showMembre_nomjLabel;
+    private javax.swing.JLabel showMembre_num_badgeDatajLabel;
+    private javax.swing.JLabel showMembre_num_badgejLabel;
+    private javax.swing.JLabel showMembre_num_civilDatajLabel;
+    private javax.swing.JLabel showMembre_num_civiljLabel;
+    private javax.swing.JLabel showMembre_num_membreDatajLabel;
+    private javax.swing.JLabel showMembre_num_membrejLabel;
+    private javax.swing.JLabel showMembre_num_qualifDatajLabel;
+    private javax.swing.JLabel showMembre_num_qualifjLabel;
+    private javax.swing.JLabel showMembre_numera_pplaDatajLabel;
+    private javax.swing.JLabel showMembre_numera_pplajLabel;
+    private javax.swing.JLabel showMembre_numero_bbDatajLabel;
+    private javax.swing.JLabel showMembre_numero_bbjLabel;
+    private javax.swing.JLabel showMembre_portableDatajLabel;
+    private javax.swing.JLabel showMembre_portablejLabel;
+    private javax.swing.JLabel showMembre_prenomDatajLabel;
+    private javax.swing.JLabel showMembre_prenomjLabel;
+    private javax.swing.JLabel showMembre_professionDatajLabel;
+    private javax.swing.JLabel showMembre_professionjLabel;
+    private javax.swing.JLabel showMembre_telDatajLabel;
+    private javax.swing.JLabel showMembre_teljLabel;
+    private javax.swing.JLabel showMembre_validite_seqDatajLabel;
+    private javax.swing.JLabel showMembre_validite_seqjLabel;
+    private javax.swing.JLabel showMembre_validite_vmDatajLabel;
+    private javax.swing.JLabel showMembre_validite_vmjLabel;
+    private javax.swing.JLabel showMembre_villeDatajLabel;
+    private javax.swing.JLabel showMembre_villejLabel;
+    private javax.swing.JDialog showMembrejDialog;
     private javax.swing.JLabel titlejLabel;
     // End of variables declaration//GEN-END:variables
 }
