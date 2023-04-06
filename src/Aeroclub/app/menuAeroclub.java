@@ -1,5 +1,6 @@
 package Aeroclub.app;
 
+import Aeroclub.app.data.Avion;
 import Aeroclub.app.data.database;
 import Aeroclub.app.data.Membre;
 import java.sql.*;
@@ -243,11 +244,103 @@ public class menuAeroclub extends javax.swing.JFrame {
         deleteMembreMainjPanel = new javax.swing.JPanel();
         deleteMembre_canceljButton = new javax.swing.JButton();
         deleteMembre_submitjButton = new javax.swing.JButton();
+        showAvionjDialog = new javax.swing.JDialog();
+        showAvionHeadjPanel = new javax.swing.JPanel();
+        showAvionTitlejLabel = new javax.swing.JLabel();
+        showAvionSeparatorjPanel = new javax.swing.JPanel();
+        showAvionMainjPanel = new javax.swing.JPanel();
+        showAvion_num_avionjLabel = new javax.swing.JLabel();
+        showAvion_num_avionDatajLabel = new javax.swing.JLabel();
+        showAvion_type_avionjLabel = new javax.swing.JLabel();
+        showAvion_type_avionDatajLabel = new javax.swing.JLabel();
+        showAvion_tauxjLabel = new javax.swing.JLabel();
+        showAvion_tauxDatajLabel = new javax.swing.JLabel();
+        showAvion_forfait1jLabel = new javax.swing.JLabel();
+        showAvion_forfait1DatajLabel = new javax.swing.JLabel();
+        showAvion_forfait2jLabel = new javax.swing.JLabel();
+        showAvion_forfait2DatajLabel = new javax.swing.JLabel();
+        showAvion_forfait3jLabel = new javax.swing.JLabel();
+        showAvion_forfait3DatajLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait1jLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait1DatajLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait2jLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait2DatajLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait3jLabel = new javax.swing.JLabel();
+        showAvion_heures_forfait3DatajLabel = new javax.swing.JLabel();
+        showAvion_reduction_semainejLabel = new javax.swing.JLabel();
+        showAvion_reduction_semaineDatajLabel = new javax.swing.JLabel();
+        showAvion_immatriculationjLabel = new javax.swing.JLabel();
+        showAvion_immatriculationDatajLabel = new javax.swing.JLabel();
+        showAvion_descriptionjLabel = new javax.swing.JLabel();
+        showAvion_descriptionDatajLabel = new javax.swing.JLabel();
+        addAvionjDialog = new javax.swing.JDialog();
+        addAvionHeadjPanel = new javax.swing.JPanel();
+        addAvionTitlejLabel = new javax.swing.JLabel();
+        addAvionSeparatorjPanel = new javax.swing.JPanel();
+        addAvionMainjPanel = new javax.swing.JPanel();
+        addAvionjButton = new javax.swing.JButton();
+        addAvion_type_avionjLabel = new javax.swing.JLabel();
+        addAvion_type_avionjTextField = new javax.swing.JTextField();
+        addAvion_tauxjLabel = new javax.swing.JLabel();
+        addAvion_tauxjTextField = new javax.swing.JTextField();
+        addAvion_forfait1jLabel = new javax.swing.JLabel();
+        addAvion_forfait1jTextField = new javax.swing.JTextField();
+        addAvion_forfait2jLabel = new javax.swing.JLabel();
+        addAvion_forfait2jTextField = new javax.swing.JTextField();
+        addAvion_forfait3jLabel = new javax.swing.JLabel();
+        addAvion_forfait3jTextField = new javax.swing.JTextField();
+        addAvion_heures_forfait1jLabel = new javax.swing.JLabel();
+        addAvion_heures_forfait1jTextField = new javax.swing.JTextField();
+        addAvion_heures_forfait2jLabel = new javax.swing.JLabel();
+        addAvion_heures_forfait2jTextField = new javax.swing.JTextField();
+        addAvion_heures_forfait3jLabel = new javax.swing.JLabel();
+        addAvion_heures_forfait3jTextField = new javax.swing.JTextField();
+        addAvion_reduction_semainejLabel = new javax.swing.JLabel();
+        addAvion_reduction_semainejTextField = new javax.swing.JTextField();
+        addAvion_immatriculationjLabel = new javax.swing.JLabel();
+        addAvion_immatriculationjTextField = new javax.swing.JTextField();
+        addAvion_descriptionjLabel = new javax.swing.JLabel();
+        addAvion_descriptionjTextField = new javax.swing.JTextField();
+        modifyAvionjDialog = new javax.swing.JDialog();
+        modifyAvionHeadjPanel = new javax.swing.JPanel();
+        modifyAvionTitlejLabel = new javax.swing.JLabel();
+        modifyAvionSeparatorjPanel = new javax.swing.JPanel();
+        modifyAvionMainjPanel = new javax.swing.JPanel();
+        modifyAvionjButton = new javax.swing.JButton();
+        modifyAvion_type_avionjLabel = new javax.swing.JLabel();
+        modifyAvion_type_avionjTextField = new javax.swing.JTextField();
+        modifyAvion_tauxjLabel = new javax.swing.JLabel();
+        modifyAvion_tauxjTextField = new javax.swing.JTextField();
+        modifyAvion_forfait1jLabel = new javax.swing.JLabel();
+        modifyAvion_forfait1jTextField = new javax.swing.JTextField();
+        modifyAvion_forfait2jLabel = new javax.swing.JLabel();
+        modifyAvion_forfait2jTextField = new javax.swing.JTextField();
+        modifyAvion_forfait3jLabel = new javax.swing.JLabel();
+        modifyAvion_forfait3jTextField = new javax.swing.JTextField();
+        modifyAvion_heures_forfait1jLabel = new javax.swing.JLabel();
+        modifyAvion_heures_forfait1jTextField = new javax.swing.JTextField();
+        modifyAvion_heures_forfait2jLabel = new javax.swing.JLabel();
+        modifyAvion_heures_forfait2jTextField = new javax.swing.JTextField();
+        modifyAvion_heures_forfait3jLabel = new javax.swing.JLabel();
+        modifyAvion_heures_forfait3jTextField = new javax.swing.JTextField();
+        modifyAvion_reduction_semainejLabel = new javax.swing.JLabel();
+        modifyAvion_reduction_semainejTextField = new javax.swing.JTextField();
+        modifyAvion_immatriculationjLabel = new javax.swing.JLabel();
+        modifyAvion_immatriculationjTextField = new javax.swing.JTextField();
+        modifyAvion_descriptionjLabel = new javax.swing.JLabel();
+        modifyAvion_descriptionjTextField = new javax.swing.JTextField();
         headjPanel = new javax.swing.JPanel();
         titlejLabel = new javax.swing.JLabel();
         backToMenujButton = new javax.swing.JButton();
         mainjLayeredPane = new javax.swing.JLayeredPane();
         separatorjPanel = new javax.swing.JPanel();
+        avionsjPanel = new javax.swing.JPanel();
+        openModifyAvionjButton = new javax.swing.JButton();
+        openShowAvionjButton = new javax.swing.JButton();
+        openAddAvionjButton = new javax.swing.JButton();
+        openDeleteAvionjButton = new javax.swing.JButton();
+        avionsjScrollPane = new javax.swing.JScrollPane();
+        avionsjTable = new javax.swing.JTable();
         menujPanel = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -264,13 +357,6 @@ public class menuAeroclub extends javax.swing.JFrame {
         openDeleteInstructeurjPaneljButton = new javax.swing.JButton();
         instructeursjScrollPane = new javax.swing.JScrollPane();
         instructeursjTable = new javax.swing.JTable();
-        avionsjPanel = new javax.swing.JPanel();
-        openModifyAvionjButton = new javax.swing.JButton();
-        openShowAvionjButton = new javax.swing.JButton();
-        openAddAvionjButton = new javax.swing.JButton();
-        openDeleteAvionjButton = new javax.swing.JButton();
-        avionsjScrollPane = new javax.swing.JScrollPane();
-        avionsjTable = new javax.swing.JTable();
         membresjPanel = new javax.swing.JPanel();
         openModifyMembrejButton = new javax.swing.JButton();
         openShowMembrejButton = new javax.swing.JButton();
@@ -1229,6 +1315,389 @@ public class menuAeroclub extends javax.swing.JFrame {
         deleteMembrejDialog.setLocationRelativeTo(null);
         deleteMembrejDialog.pack();
 
+        showAvionjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        showAvionjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        showAvionjDialog.setMinimumSize(new java.awt.Dimension(400, 600));
+        showAvionjDialog.setModal(true);
+        showAvionjDialog.setPreferredSize(new java.awt.Dimension(400, 600));
+        showAvionjDialog.setResizable(false);
+        showAvionjDialog.setSize(new java.awt.Dimension(400, 600));
+        showAvionjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showAvionHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showAvionTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        showAvionTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showAvionTitlejLabel.setText("Détails de l'avion");
+        showAvionHeadjPanel.add(showAvionTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        showAvionjDialog.getContentPane().add(showAvionHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        showAvionSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        showAvionjDialog.getContentPane().add(showAvionSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        showAvionMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showAvion_num_avionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_num_avionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_num_avionjLabel.setText("Numero :");
+        showAvion_num_avionjLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_num_avionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
+
+        showAvion_num_avionDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_num_avionDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
+
+        showAvion_type_avionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_type_avionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_type_avionjLabel.setText("Type d'avion :");
+        showAvion_type_avionjLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_type_avionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
+
+        showAvion_type_avionDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_type_avionDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
+
+        showAvion_tauxjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_tauxjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_tauxjLabel.setText("Taux :");
+        showAvion_tauxjLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_tauxjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
+
+        showAvion_tauxDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_tauxDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
+
+        showAvion_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_forfait1jLabel.setText("Forfait 1 :");
+        showAvion_forfait1jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
+
+        showAvion_forfait1DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_forfait1DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
+
+        showAvion_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_forfait2jLabel.setText("Forfait 2 :");
+        showAvion_forfait2jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
+
+        showAvion_forfait2DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_forfait2DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
+
+        showAvion_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_forfait3jLabel.setText("Forfait 3 :");
+        showAvion_forfait3jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
+
+        showAvion_forfait3DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_forfait3DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
+
+        showAvion_heures_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_heures_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_heures_forfait1jLabel.setText("Heures forfait 1 :");
+        showAvion_heures_forfait1jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_heures_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
+
+        showAvion_heures_forfait1DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_heures_forfait1DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
+
+        showAvion_heures_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_heures_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_heures_forfait2jLabel.setText("Heures forfait 2 :");
+        showAvion_heures_forfait2jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_heures_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
+
+        showAvion_heures_forfait2DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_heures_forfait2DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
+
+        showAvion_heures_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_heures_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_heures_forfait3jLabel.setText("Heures forfait 3 :");
+        showAvion_heures_forfait3jLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_heures_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
+
+        showAvion_heures_forfait3DatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_heures_forfait3DatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
+
+        showAvion_reduction_semainejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_reduction_semainejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_reduction_semainejLabel.setText("Reduction semaine :");
+        showAvion_reduction_semainejLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_reduction_semainejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+
+        showAvion_reduction_semaineDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_reduction_semaineDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
+
+        showAvion_immatriculationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_immatriculationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_immatriculationjLabel.setText("Immatriculation :");
+        showAvion_immatriculationjLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_immatriculationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
+
+        showAvion_immatriculationDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_immatriculationDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
+
+        showAvion_descriptionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvion_descriptionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        showAvion_descriptionjLabel.setText("Description :");
+        showAvion_descriptionjLabel.setToolTipText("");
+        showAvionMainjPanel.add(showAvion_descriptionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 140, 20));
+
+        showAvion_descriptionDatajLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        showAvionMainjPanel.add(showAvion_descriptionDatajLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 200, 20));
+
+        showAvionjDialog.getContentPane().add(showAvionMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+
+        showAvionjDialog.setLocationRelativeTo(null);
+        showAvionjDialog.pack();
+
+        addAvionjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addAvionjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        addAvionjDialog.setIconImage(null);
+        addAvionjDialog.setModal(true);
+        addAvionjDialog.setResizable(false);
+        addAvionjDialog.setSize(new java.awt.Dimension(400, 600));
+        addAvionjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addAvionHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addAvionTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        addAvionTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addAvionTitlejLabel.setText("Ajout d'un avion");
+        addAvionHeadjPanel.add(addAvionTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        addAvionjDialog.getContentPane().add(addAvionHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        addAvionSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        addAvionjDialog.getContentPane().add(addAvionSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        addAvionMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addAvionjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionjButton.setText("Ajouter");
+        addAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAvionjButtonActionPerformed(evt);
+            }
+        });
+        addAvionMainjPanel.add(addAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 100, 30));
+
+        addAvion_type_avionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_type_avionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_type_avionjLabel.setText("Type d'avion :");
+        addAvionMainjPanel.add(addAvion_type_avionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
+
+        addAvion_type_avionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_type_avionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
+
+        addAvion_tauxjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_tauxjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_tauxjLabel.setText("Taux :");
+        addAvionMainjPanel.add(addAvion_tauxjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
+
+        addAvion_tauxjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_tauxjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
+
+        addAvion_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_forfait1jLabel.setText("Forfait 1 :");
+        addAvionMainjPanel.add(addAvion_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
+
+        addAvion_forfait1jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_forfait1jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
+
+        addAvion_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_forfait2jLabel.setText("Forfait 2 :");
+        addAvionMainjPanel.add(addAvion_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
+
+        addAvion_forfait2jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_forfait2jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
+
+        addAvion_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_forfait3jLabel.setText("Forfait 3 :");
+        addAvionMainjPanel.add(addAvion_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
+
+        addAvion_forfait3jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_forfait3jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
+
+        addAvion_heures_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_heures_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_heures_forfait1jLabel.setText("Heures forfait 1 :");
+        addAvionMainjPanel.add(addAvion_heures_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
+
+        addAvion_heures_forfait1jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_heures_forfait1jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
+
+        addAvion_heures_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_heures_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_heures_forfait2jLabel.setText("Heures forfait 2 :");
+        addAvionMainjPanel.add(addAvion_heures_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
+
+        addAvion_heures_forfait2jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_heures_forfait2jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
+
+        addAvion_heures_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_heures_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_heures_forfait3jLabel.setText("Heures forfait 3 :");
+        addAvionMainjPanel.add(addAvion_heures_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
+
+        addAvion_heures_forfait3jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_heures_forfait3jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
+
+        addAvion_reduction_semainejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_reduction_semainejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_reduction_semainejLabel.setText("Réduction semaine :");
+        addAvionMainjPanel.add(addAvion_reduction_semainejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
+
+        addAvion_reduction_semainejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_reduction_semainejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
+
+        addAvion_immatriculationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_immatriculationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_immatriculationjLabel.setText("Immatriculation :");
+        addAvionMainjPanel.add(addAvion_immatriculationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+
+        addAvion_immatriculationjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_immatriculationjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
+
+        addAvion_descriptionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        addAvion_descriptionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        addAvion_descriptionjLabel.setText("Description :");
+        addAvionMainjPanel.add(addAvion_descriptionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
+
+        addAvion_descriptionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        addAvionMainjPanel.add(addAvion_descriptionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
+
+        addAvionjDialog.getContentPane().add(addAvionMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+
+        addAvionjDialog.setLocationRelativeTo(null);
+        addAvionjDialog.pack();
+
+        modifyAvionjDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        modifyAvionjDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        modifyAvionjDialog.setModal(true);
+        modifyAvionjDialog.setResizable(false);
+        modifyAvionjDialog.setSize(new java.awt.Dimension(800, 600));
+        modifyAvionjDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        modifyAvionHeadjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        modifyAvionTitlejLabel.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        modifyAvionTitlejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        modifyAvionTitlejLabel.setText("Modification de l'avion");
+        modifyAvionHeadjPanel.add(modifyAvionTitlejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        modifyAvionjDialog.getContentPane().add(modifyAvionHeadjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+
+        modifyAvionSeparatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
+        modifyAvionjDialog.getContentPane().add(modifyAvionSeparatorjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 1));
+
+        modifyAvionMainjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        modifyAvionjButton.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionjButton.setText("Modifier");
+        modifyAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyAvionjButtonActionPerformed(evt);
+            }
+        });
+        modifyAvionMainjPanel.add(modifyAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 100, 30));
+
+        modifyAvion_type_avionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_type_avionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_type_avionjLabel.setText("Identifiant :");
+        modifyAvionMainjPanel.add(modifyAvion_type_avionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 140, 20));
+
+        modifyAvion_type_avionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_type_avionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 200, 20));
+
+        modifyAvion_tauxjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_tauxjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_tauxjLabel.setText("Mot de passe :");
+        modifyAvionMainjPanel.add(modifyAvion_tauxjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 140, 20));
+
+        modifyAvion_tauxjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_tauxjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 20));
+
+        modifyAvion_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_forfait1jLabel.setText("Nom :");
+        modifyAvionMainjPanel.add(modifyAvion_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, 20));
+
+        modifyAvion_forfait1jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_forfait1jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 20));
+
+        modifyAvion_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_forfait2jLabel.setText("Prénom :");
+        modifyAvionMainjPanel.add(modifyAvion_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 20));
+
+        modifyAvion_forfait2jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_forfait2jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 20));
+
+        modifyAvion_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_forfait3jLabel.setText("Adresse :");
+        modifyAvionMainjPanel.add(modifyAvion_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, 20));
+
+        modifyAvion_forfait3jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_forfait3jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 200, 20));
+
+        modifyAvion_heures_forfait1jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_heures_forfait1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_heures_forfait1jLabel.setText("Code postal :");
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 140, 20));
+
+        modifyAvion_heures_forfait1jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait1jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 20));
+
+        modifyAvion_heures_forfait2jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_heures_forfait2jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_heures_forfait2jLabel.setText("Ville :");
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 20));
+
+        modifyAvion_heures_forfait2jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait2jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 200, 20));
+
+        modifyAvion_heures_forfait3jLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_heures_forfait3jLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_heures_forfait3jLabel.setText("Numéro civil :");
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait3jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 140, 20));
+
+        modifyAvion_heures_forfait3jTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_heures_forfait3jTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 20));
+
+        modifyAvion_reduction_semainejLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_reduction_semainejLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_reduction_semainejLabel.setText("Téléphone :");
+        modifyAvionMainjPanel.add(modifyAvion_reduction_semainejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 140, 20));
+
+        modifyAvion_reduction_semainejTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_reduction_semainejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 200, 20));
+
+        modifyAvion_immatriculationjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_immatriculationjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_immatriculationjLabel.setText("Portable :");
+        modifyAvionMainjPanel.add(modifyAvion_immatriculationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+
+        modifyAvion_immatriculationjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_immatriculationjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 200, 20));
+
+        modifyAvion_descriptionjLabel.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        modifyAvion_descriptionjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modifyAvion_descriptionjLabel.setText("Email :");
+        modifyAvionMainjPanel.add(modifyAvion_descriptionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 140, 20));
+
+        modifyAvion_descriptionjTextField.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        modifyAvionMainjPanel.add(modifyAvion_descriptionjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 200, 20));
+
+        modifyAvionjDialog.getContentPane().add(modifyAvionMainjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 550));
+
+        modifyMembrejDialog.setLocationRelativeTo(null);
+        modifyMembrejDialog.pack();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aeroclub - Menu");
         setResizable(false);
@@ -1256,6 +1725,82 @@ public class menuAeroclub extends javax.swing.JFrame {
         separatorjPanel.setBackground(new java.awt.Color(0, 0, 0));
         mainjLayeredPane.add(separatorjPanel);
         separatorjPanel.setBounds(0, 0, 1440, 1);
+
+        avionsjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        openModifyAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openModifyAvionjButton.setText("Modifier");
+        openModifyAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openModifyAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openModifyAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
+
+        openShowAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openShowAvionjButton.setText("Afficher");
+        openShowAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openShowAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openShowAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
+
+        openAddAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openAddAvionjButton.setText("Ajouter");
+        openAddAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openAddAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openAddAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
+
+        openDeleteAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        openDeleteAvionjButton.setText("Supprimer");
+        openDeleteAvionjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openDeleteAvionjButtonActionPerformed(evt);
+            }
+        });
+        avionsjPanel.add(openDeleteAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
+
+        avionsjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        avionsjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero", "Type avion", "Immatriculation"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        avionsjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        avionsjTable.getTableHeader().setReorderingAllowed(false);
+        avionsjScrollPane.setViewportView(avionsjTable);
+        if (avionsjTable.getColumnModel().getColumnCount() > 0) {
+            avionsjTable.getColumnModel().getColumn(0).setResizable(false);
+            avionsjTable.getColumnModel().getColumn(1).setResizable(false);
+            avionsjTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        avionsjPanel.add(avionsjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
+
+        mainjLayeredPane.add(avionsjPanel);
+        avionsjPanel.setBounds(0, 0, 1440, 700);
 
         menujPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1384,82 +1929,6 @@ public class menuAeroclub extends javax.swing.JFrame {
 
         mainjLayeredPane.add(instructeursjPanel);
         instructeursjPanel.setBounds(0, 0, 1440, 700);
-
-        avionsjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        openModifyAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openModifyAvionjButton.setText("Modifier");
-        openModifyAvionjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openModifyAvionjButtonActionPerformed(evt);
-            }
-        });
-        avionsjPanel.add(openModifyAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 250, 30));
-
-        openShowAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openShowAvionjButton.setText("Afficher");
-        openShowAvionjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openShowAvionjButtonActionPerformed(evt);
-            }
-        });
-        avionsjPanel.add(openShowAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 250, 30));
-
-        openAddAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openAddAvionjButton.setText("Ajouter");
-        openAddAvionjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openAddAvionjButtonActionPerformed(evt);
-            }
-        });
-        avionsjPanel.add(openAddAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 250, 30));
-
-        openDeleteAvionjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        openDeleteAvionjButton.setText("Supprimer");
-        openDeleteAvionjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openDeleteAvionjButtonActionPerformed(evt);
-            }
-        });
-        avionsjPanel.add(openDeleteAvionjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 250, 30));
-
-        avionsjTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        avionsjTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Numero", "Type avion", "Immatriculation"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        avionsjTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        avionsjTable.getTableHeader().setReorderingAllowed(false);
-        avionsjScrollPane.setViewportView(avionsjTable);
-        if (avionsjTable.getColumnModel().getColumnCount() > 0) {
-            avionsjTable.getColumnModel().getColumn(0).setResizable(false);
-            avionsjTable.getColumnModel().getColumn(1).setResizable(false);
-            avionsjTable.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        avionsjPanel.add(avionsjScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1420, 640));
-
-        mainjLayeredPane.add(avionsjPanel);
-        avionsjPanel.setBounds(0, 0, 1440, 700);
 
         membresjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1702,11 +2171,22 @@ public class menuAeroclub extends javax.swing.JFrame {
     }//GEN-LAST:event_openModifyAvionjButtonActionPerformed
 
     private void openShowAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openShowAvionjButtonActionPerformed
-        // TODO add your handling code here:
+        openShowAvion();
     }//GEN-LAST:event_openShowAvionjButtonActionPerformed
 
     private void openAddAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAddAvionjButtonActionPerformed
-        // TODO add your handling code here:
+        addAvion_type_avionjTextField.setText("");
+        addAvion_tauxjTextField.setText("");
+        addAvion_forfait1jTextField.setText("");
+        addAvion_forfait2jTextField.setText("");
+        addAvion_forfait3jTextField.setText("");
+        addAvion_heures_forfait1jTextField.setText("");
+        addAvion_heures_forfait2jTextField.setText("");
+        addAvion_heures_forfait3jTextField.setText("");
+        addAvion_reduction_semainejTextField.setText("");
+        addAvion_immatriculationjTextField.setText("");
+        addAvion_descriptionjTextField.setText("");
+        addAvionjDialog.setVisible(true);
     }//GEN-LAST:event_openAddAvionjButtonActionPerformed
 
     private void openDeleteAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteAvionjButtonActionPerformed
@@ -1754,6 +2234,14 @@ public class menuAeroclub extends javax.swing.JFrame {
     private void openDeleteCategoriejPaneljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openDeleteCategoriejPaneljButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_openDeleteCategoriejPaneljButtonActionPerformed
+
+    private void addAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAvionjButtonActionPerformed
+        addAvion();
+    }//GEN-LAST:event_addAvionjButtonActionPerformed
+
+    private void modifyAvionjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyAvionjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyAvionjButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1906,8 +2394,6 @@ public class menuAeroclub extends javax.swing.JFrame {
     
     public void addMember() {
         
-        //new dataMember().addMember(Integer.parseInt(addMember_num_membrejTextField.getText()), addMember_loginjTextField.getText(), addMember_passwordjPasswordField.getText());
-        
         Membre member = new Membre();
         
         member.nom = addMembre_nomjTextField.getText();
@@ -2001,11 +2487,44 @@ public class menuAeroclub extends javax.swing.JFrame {
     
     public void modifyMember() {
         
-        new Membre().modifyMember(Integer.parseInt(modifyMembre_loginjTextField.getText()), modifyMembre_nomjTextField.getText(), modifyMembre_passwordjPasswordField.getText());
+        Membre member = new Membre();
+        
+        member.nom = modifyMembre_nomjTextField.getText();
+        member.prenom = modifyMembre_prenomjTextField.getText();
+        member.adresse = modifyMembre_adressejTextField.getText();
+        member.code_postal = modifyMembre_code_postaljTextField.getText();
+        member.ville = modifyMembre_villejTextField.getText();
+        member.num_civil = Integer.parseInt(modifyMembre_num_civiljTextField.getText());
+        member.tel = modifyMembre_teljTextField.getText();
+        member.portable = modifyMembre_portablejTextField.getText();
+        member.email = modifyMembre_emailjTextField.getText();
+        member.commentaire = modifyMembre_commentairejTextField.getText();
+        member.date_vm = java.sql.Date.valueOf(modifyMembre_date_vmjTextField.getText());
+        member.validite_vm = java.sql.Date.valueOf(modifyMembre_validite_vmjTextField.getText());
+        member.date_seq = java.sql.Date.valueOf(modifyMembre_date_seqjTextField.getText());
+        member.validite_seq = java.sql.Date.valueOf(modifyMembre_validite_seqjTextField.getText());
+        member.num_badge = modifyMembre_num_badgejTextField.getText();
+        member.num_qualif = Integer.parseInt(modifyMembre_num_qualifjTextField.getText());
+        member.profession = modifyMembre_professionjTextField.getText();
+        member.date_naissance = java.sql.Date.valueOf(modifyMembre_date_naissancejTextField.getText());
+        member.lieu_naissance = modifyMembre_lieu_naissancejTextField.getText();
+        member.carte_federale = modifyMembre_carte_federalejTextField.getText();
+        member.date_attestation = java.sql.Date.valueOf(modifyMembre_date_attestationjTextField.getText());
+        member.date_theorique_bb = java.sql.Date.valueOf(modifyMembre_date_theorique_bbjTextField.getText());
+        member.date_theorique_ppla = java.sql.Date.valueOf(modifyMembre_date_theorique_pplajTextField.getText());
+        member.date_bb = java.sql.Date.valueOf(modifyMembre_date_bbjTextField.getText());
+        member.date_ppla = java.sql.Date.valueOf(modifyMembre_date_pplajTextField.getText());
+        member.numero_bb = modifyMembre_numero_bbjTextField.getText();
+        member.numera_ppla = modifyMembre_numera_pplajTextField.getText();
+        member.date_entree = java.sql.Date.valueOf(modifyMembre_date_entreejTextField.getText());
+        member.membre_actif = modifyMembre_membre_actifjCheckBox.isSelected() ? 1 : 0;
+        member.membre_inscrit = modifyMembre_membre_inscritjCheckBox.isSelected() ? 1 : 0;
+        member.login = modifyMembre_loginjTextField.getText();
+        member.password = modifyMembre_passwordjPasswordField.getText();
+        
+        member.modifyMember();
         
         modifyMembrejDialog.dispose();
-        
-        getMembersTable();
         
     }
     
@@ -2071,6 +2590,60 @@ public class menuAeroclub extends javax.swing.JFrame {
         }
     }
     
+    public void openShowAvion() {
+        
+        int selectedRow = avionsjTable.getSelectedRow();
+        
+        if(selectedRow != -1) {
+            
+            String num_avion = String.valueOf(avionsjTable.getValueAt(selectedRow, 0));
+
+            Avion avion = new Avion();
+            avion.getAvion(Integer.parseInt(num_avion));
+            
+            showAvion_num_avionDatajLabel.setText(String.valueOf(avion.num_avion));
+            showAvion_type_avionDatajLabel.setText(String.valueOf(avion.type_avion));
+            showAvion_tauxDatajLabel.setText(String.valueOf(avion.taux));
+            showAvion_forfait1DatajLabel.setText(String.valueOf(avion.forfait1));
+            showAvion_forfait2DatajLabel.setText(String.valueOf(avion.forfait2));
+            showAvion_forfait3DatajLabel.setText(String.valueOf(avion.forfait3));
+            showAvion_heures_forfait1DatajLabel.setText(String.valueOf(avion.heures_forfait1));
+            showAvion_heures_forfait2DatajLabel.setText(String.valueOf(avion.heures_forfait2));
+            showAvion_heures_forfait3DatajLabel.setText(String.valueOf(avion.heures_forfait3));
+            showAvion_reduction_semaineDatajLabel.setText(String.valueOf(avion.reduction_semaine));
+            showAvion_immatriculationDatajLabel.setText(String.valueOf(avion.immatriculation));
+            showAvion_descriptionDatajLabel.setText(String.valueOf(avion.description));
+
+            showAvionjDialog.setVisible(true);
+            
+        }
+        
+    }
+    
+    public void addAvion() {
+        
+        Avion avion = new Avion();
+        
+        avion.type_avion = addAvion_type_avionjTextField.getText();
+        avion.taux = Integer.parseInt(addAvion_tauxjTextField.getText());
+        avion.forfait1 = Integer.parseInt(addAvion_forfait1jTextField.getText());
+        avion.forfait2 = Integer.parseInt(addAvion_forfait2jTextField.getText());
+        avion.forfait3 = Integer.parseInt(addAvion_forfait3jTextField.getText());
+        avion.heures_forfait1 = Integer.parseInt(addAvion_heures_forfait1jTextField.getText());
+        avion.heures_forfait2 = Integer.parseInt(addAvion_heures_forfait2jTextField.getText());
+        avion.heures_forfait3 = Integer.parseInt(addAvion_heures_forfait3jTextField.getText());
+        avion.reduction_semaine = Integer.parseInt(addAvion_reduction_semainejTextField.getText());
+        avion.immatriculation = addAvion_immatriculationjTextField.getText();
+        avion.description = addAvion_descriptionjTextField.getText();
+        
+        avion.addAvion();
+        
+        addAvionjDialog.dispose();
+        
+        getAvionsTable();
+        
+    }
+    
     public void getInstructeursTable() {
         
         Connection connection = null;
@@ -2120,6 +2693,34 @@ public class menuAeroclub extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel addAvionHeadjPanel;
+    private javax.swing.JPanel addAvionMainjPanel;
+    private javax.swing.JPanel addAvionSeparatorjPanel;
+    private javax.swing.JLabel addAvionTitlejLabel;
+    private javax.swing.JLabel addAvion_descriptionjLabel;
+    private javax.swing.JTextField addAvion_descriptionjTextField;
+    private javax.swing.JLabel addAvion_forfait1jLabel;
+    private javax.swing.JTextField addAvion_forfait1jTextField;
+    private javax.swing.JLabel addAvion_forfait2jLabel;
+    private javax.swing.JTextField addAvion_forfait2jTextField;
+    private javax.swing.JLabel addAvion_forfait3jLabel;
+    private javax.swing.JTextField addAvion_forfait3jTextField;
+    private javax.swing.JLabel addAvion_heures_forfait1jLabel;
+    private javax.swing.JTextField addAvion_heures_forfait1jTextField;
+    private javax.swing.JLabel addAvion_heures_forfait2jLabel;
+    private javax.swing.JTextField addAvion_heures_forfait2jTextField;
+    private javax.swing.JLabel addAvion_heures_forfait3jLabel;
+    private javax.swing.JTextField addAvion_heures_forfait3jTextField;
+    private javax.swing.JLabel addAvion_immatriculationjLabel;
+    private javax.swing.JTextField addAvion_immatriculationjTextField;
+    private javax.swing.JLabel addAvion_reduction_semainejLabel;
+    private javax.swing.JTextField addAvion_reduction_semainejTextField;
+    private javax.swing.JLabel addAvion_tauxjLabel;
+    private javax.swing.JTextField addAvion_tauxjTextField;
+    private javax.swing.JLabel addAvion_type_avionjLabel;
+    private javax.swing.JTextField addAvion_type_avionjTextField;
+    private javax.swing.JButton addAvionjButton;
+    private javax.swing.JDialog addAvionjDialog;
     private javax.swing.JPanel addMembreHeadjPanel;
     private javax.swing.JPanel addMembreMainjPanel;
     private javax.swing.JPanel addMembreSeparatorjPanel;
@@ -2221,6 +2822,34 @@ public class menuAeroclub extends javax.swing.JFrame {
     private javax.swing.JScrollPane membresjScrollPane;
     private javax.swing.JTable membresjTable;
     private javax.swing.JPanel menujPanel;
+    private javax.swing.JPanel modifyAvionHeadjPanel;
+    private javax.swing.JPanel modifyAvionMainjPanel;
+    private javax.swing.JPanel modifyAvionSeparatorjPanel;
+    private javax.swing.JLabel modifyAvionTitlejLabel;
+    private javax.swing.JLabel modifyAvion_descriptionjLabel;
+    private javax.swing.JTextField modifyAvion_descriptionjTextField;
+    private javax.swing.JLabel modifyAvion_forfait1jLabel;
+    private javax.swing.JTextField modifyAvion_forfait1jTextField;
+    private javax.swing.JLabel modifyAvion_forfait2jLabel;
+    private javax.swing.JTextField modifyAvion_forfait2jTextField;
+    private javax.swing.JLabel modifyAvion_forfait3jLabel;
+    private javax.swing.JTextField modifyAvion_forfait3jTextField;
+    private javax.swing.JLabel modifyAvion_heures_forfait1jLabel;
+    private javax.swing.JTextField modifyAvion_heures_forfait1jTextField;
+    private javax.swing.JLabel modifyAvion_heures_forfait2jLabel;
+    private javax.swing.JTextField modifyAvion_heures_forfait2jTextField;
+    private javax.swing.JLabel modifyAvion_heures_forfait3jLabel;
+    private javax.swing.JTextField modifyAvion_heures_forfait3jTextField;
+    private javax.swing.JLabel modifyAvion_immatriculationjLabel;
+    private javax.swing.JTextField modifyAvion_immatriculationjTextField;
+    private javax.swing.JLabel modifyAvion_reduction_semainejLabel;
+    private javax.swing.JTextField modifyAvion_reduction_semainejTextField;
+    private javax.swing.JLabel modifyAvion_tauxjLabel;
+    private javax.swing.JTextField modifyAvion_tauxjTextField;
+    private javax.swing.JLabel modifyAvion_type_avionjLabel;
+    private javax.swing.JTextField modifyAvion_type_avionjTextField;
+    private javax.swing.JButton modifyAvionjButton;
+    private javax.swing.JDialog modifyAvionjDialog;
     private javax.swing.JPanel modifyMembreHeadjPanel;
     private javax.swing.JPanel modifyMembreMainjPanel;
     private javax.swing.JPanel modifyMembreSeparatorjPanel;
@@ -2308,6 +2937,35 @@ public class menuAeroclub extends javax.swing.JFrame {
     private javax.swing.JButton openShowInstructeurjPaneljButton;
     private javax.swing.JButton openShowMembrejButton;
     private javax.swing.JPanel separatorjPanel;
+    private javax.swing.JPanel showAvionHeadjPanel;
+    private javax.swing.JPanel showAvionMainjPanel;
+    private javax.swing.JPanel showAvionSeparatorjPanel;
+    private javax.swing.JLabel showAvionTitlejLabel;
+    private javax.swing.JLabel showAvion_descriptionDatajLabel;
+    private javax.swing.JLabel showAvion_descriptionjLabel;
+    private javax.swing.JLabel showAvion_forfait1DatajLabel;
+    private javax.swing.JLabel showAvion_forfait1jLabel;
+    private javax.swing.JLabel showAvion_forfait2DatajLabel;
+    private javax.swing.JLabel showAvion_forfait2jLabel;
+    private javax.swing.JLabel showAvion_forfait3DatajLabel;
+    private javax.swing.JLabel showAvion_forfait3jLabel;
+    private javax.swing.JLabel showAvion_heures_forfait1DatajLabel;
+    private javax.swing.JLabel showAvion_heures_forfait1jLabel;
+    private javax.swing.JLabel showAvion_heures_forfait2DatajLabel;
+    private javax.swing.JLabel showAvion_heures_forfait2jLabel;
+    private javax.swing.JLabel showAvion_heures_forfait3DatajLabel;
+    private javax.swing.JLabel showAvion_heures_forfait3jLabel;
+    private javax.swing.JLabel showAvion_immatriculationDatajLabel;
+    private javax.swing.JLabel showAvion_immatriculationjLabel;
+    private javax.swing.JLabel showAvion_num_avionDatajLabel;
+    private javax.swing.JLabel showAvion_num_avionjLabel;
+    private javax.swing.JLabel showAvion_reduction_semaineDatajLabel;
+    private javax.swing.JLabel showAvion_reduction_semainejLabel;
+    private javax.swing.JLabel showAvion_tauxDatajLabel;
+    private javax.swing.JLabel showAvion_tauxjLabel;
+    private javax.swing.JLabel showAvion_type_avionDatajLabel;
+    private javax.swing.JLabel showAvion_type_avionjLabel;
+    private javax.swing.JDialog showAvionjDialog;
     private javax.swing.JPanel showMembreHeadjPanel;
     private javax.swing.JPanel showMembreMainjPanel;
     private javax.swing.JPanel showMembreSeparatorjPanel;
