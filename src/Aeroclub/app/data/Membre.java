@@ -38,13 +38,13 @@ public class Membre {
     public String login;
     public String password;
     
-    public void getMember(int num_member) {
+    public void getMembre(int num_member) {
         
         Connection connection = null;
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("SELECT * FROM membres WHERE num_membre = ?;");
@@ -100,13 +100,13 @@ public class Membre {
         }
     }
     
-    public void addMember() {
+    public void addMembre() {
         
         Connection connection = null;
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("INSERT INTO public.membres(nom, prenom, adresse, code_postal, ville, num_civil, tel, portable, email, commentaire, date_vm, validite_vm, date_seq, validite_seq, num_badge, num_qualif, profession, date_naissance, lieu_naissance, carte_federale, date_attestation, date_theorique_bb, date_theorique_ppla, date_bb, date_ppla, numero_bb, numera_ppla, date_entree, membre_actif, membre_inscrit, login, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
@@ -158,13 +158,13 @@ public class Membre {
         }
     }
     
-    public void modifyMember() {
+    public void modifyMembre() {
         
         Connection connection = null;
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("UPDATE public.membres SET nom=?, prenom=?, adresse=?, code_postal=?, ville=?, num_civil=?, tel=?, portable=?, email=?, commentaire=?, date_vm=?, validite_vm=?, date_seq=?, validite_seq=?, num_badge=?, num_qualif=?, profession=?, date_naissance=?, lieu_naissance=?, carte_federale=?, date_attestation=?, date_theorique_bb=?, date_theorique_ppla=?, date_bb=?, date_ppla=?, numero_bb=?, numera_ppla=?, date_entree=?, membre_actif=?, membre_inscrit=?, login=?, password=? WHERE num_membre = ?;");
@@ -217,16 +217,17 @@ public class Membre {
         }
     }
     
-    public void deleteMember(int num_membre) {
+    public void deleteMembre() {
+        
         Connection connection = null;
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("DELETE FROM membres WHERE num_membre = ?;");
-            ps.setInt(1, num_membre);
+            ps.setInt(1, this.num_membre);
             ps.executeUpdate();
             
         } catch(ClassNotFoundException | SQLException e) {
@@ -242,4 +243,5 @@ public class Membre {
             }
         }
     }
+    
 }

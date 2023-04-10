@@ -23,7 +23,7 @@ public class Avion {
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("SELECT * FROM avions WHERE num_avion = ?;");
@@ -65,7 +65,7 @@ public class Avion {
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
             PreparedStatement ps = connection.prepareStatement("INSERT INTO public.avions(type_avion, taux, forfait1, forfait2, forfait3, heures_forfait1, heures_forfait2, heures_forfait3, reduction_semaine, immatriculation, description, image_avion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
@@ -97,19 +97,28 @@ public class Avion {
         }
     }
     
-    public void modifyMember(int num_membre, String login, String password) {
+    public void modifyAvion() {
         
         Connection connection = null;
         
         try {
             
-            database db = new database();
+            Database db = new Database();
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
-            PreparedStatement ps = connection.prepareStatement("UPDATE membres SET login = ?, password = ? WHERE num_membre = ?;");
-            ps.setString(1, login);
-            ps.setString(2, password);
-            ps.setInt(3, num_membre);
+            PreparedStatement ps = connection.prepareStatement("UPDATE public.avions SET type_avion=?, taux=?, forfait1=?, forfait2=?, forfait3=?, heures_forfait1=?, heures_forfait2=?, heures_forfait3=?, reduction_semaine=?, immatriculation=?, description=? WHERE num_avion=?;");
+            ps.setString(1, this.type_avion);
+            ps.setInt(2, this.taux);
+            ps.setInt(3, this.forfait1);
+            ps.setInt(4, this.forfait2);
+            ps.setInt(5, this.forfait3);
+            ps.setInt(6, this.heures_forfait1);
+            ps.setInt(7, this.heures_forfait2);
+            ps.setInt(8, this.heures_forfait3);
+            ps.setInt(9, this.reduction_semaine);
+            ps.setString(10, this.immatriculation);
+            ps.setString(11, this.description);
+            ps.setInt(12, this.num_avion);
             ps.executeUpdate();
             
         } catch(ClassNotFoundException | SQLException e) {
@@ -125,4 +134,32 @@ public class Avion {
             }
         }
     }
+    
+    public void deleteAvion() {
+        
+        Connection connection = null;
+        
+        try {
+            
+            Database db = new Database();
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://"+db.host+"/"+db.database, db.username, db.password);
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM avions WHERE num_avion = ?;");
+            ps.setInt(1, this.num_avion);
+            ps.executeUpdate();
+            
+        } catch(ClassNotFoundException | SQLException e) {
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
 }
